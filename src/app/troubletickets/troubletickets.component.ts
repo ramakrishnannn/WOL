@@ -16,7 +16,8 @@ export class TroubleticketsComponent {
       'name': ['', Validators.required],
       'email': ['', [Validators.required, ValidationService.emailValidator]],
        'phone': ['', Validators.required],
-      'profile': ['', [Validators.required, Validators.minLength(10)]]
+       'category': ['', Validators.required],
+      'description': ['', [Validators.required, Validators.minLength(10)]]
     });
   }
   

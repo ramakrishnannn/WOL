@@ -1,5 +1,5 @@
 <div class="pagecontentbar">
-  <h1>Create Trouble Ticket</h1>
+  <h3>Create Trouble Ticket</h3>
   
   
   
@@ -21,12 +21,26 @@
       <input type="text" class="form-control" ngControl="phone" formControlName="phone" id="phone">
         <control-messages [control]="userForm.controls.phone" class="error"></control-messages>
  </div> 
+
+ <div class="form-group">
+      <label for="category">Category</label>
+       <select class="form-control"  ngControl="category" formControlName="category" id="category">
+        <option ngValue="">Select Category</option>
+       <option ngValue="Billing_Payments">Billing and Payments</option>
+        <option ngValue="Dish">Dish</option>
+        <option ngValue="Internet">Internet</option>
+        <option ngValue="Reset_Password">Reset Password</option>
+        <option ngValue="Others">Others</option>
+      </select>
+        <control-messages [control]="userForm.controls.category" class="error"></control-messages>
+ </div> 
+ 
  
  
  <div class="form-group">
-      <label for="profile">Profile Description</label>
-      <textarea class="form-control" ngControl="profile" formControlName="profile" id="profile"></textarea>
-       <span class="error"> <control-messages [control]="userForm.controls.profile" class="error"></control-messages> </span>
+      <label for="description">Description</label>
+      <textarea class="form-control" ngControl="description" formControlName="description" id="description"></textarea>
+       <span class="error"> <control-messages [control]="userForm.controls.description" class="error"></control-messages> </span>
  </div>
 
   <button class="btn btn-default" type="submit" [disabled]="!userForm.valid">Submit</button>
