@@ -11,20 +11,20 @@
         <div class="menu-list">
   
             <ul id="menu-content" class="menu-content collapse out">
-                <li routerLink="/dashboard" routerLinkActive="active1">
-                  <a>
+                <li  class="collapsehead" >
+                  <a href="#">
                   <i class="fa fa-dashboard fa-lg"></i> Dashboard
                   </a>
                 </li>
 
                 <li  data-toggle="collapse" data-target="#products" class="collapsed">
-                  <a href="#"><i class="fa fa-address-book-o fa-lg"></i> MY ACCOUNT <span class="arrow"></span></a>
+                  <a><i class="fa fa-address-book-o fa-lg"></i> MY ACCOUNT <span class="arrow"></span></a>
                 </li>
                 <ul class="sub-menu collapse" id="products">
                     <li (click)="issubmenu = !issubmenu;"  [ngClass]="{'active1': issubmenu }"><a href="#">Invoices & Payment</a></li>
                     <li><a href="#">Account Summary</a></li>
-                    <li><a href="#">View Invoice Details</a></li>
-                    <li><a href="#">Make Payment</a></li>
+                    <li routerLink="/viewinvoice" routerLinkActive="active1"><a>View Invoice Details</a></li>
+                    <li routerLink="/payment" routerLinkActive="active1"><a>Make Payment</a></li>
                     <li><a href="#">Auto Payment</a></li>
                     <li><a href="#">Payment History</a></li>
                     <li><a href="#">Invoice Reports</a></li>
@@ -34,10 +34,10 @@
 
 
                 <li data-toggle="collapse" data-target="#service" class="collapsed">
-                  <a href="#"><i class="fa fa-users fa-lg"></i> Users <span class="arrow"></span></a>
+                  <a><i class="fa fa-users fa-lg"></i> Users <span class="arrow"></span></a>
                 </li>  
                 <ul class="sub-menu collapse" id="service">
-                  <li>New Service 1</li>
+                  <li routerLink="/createtroubleticket" routerLinkActive="active1"><a> Create Trouble Ticket</a></li>
                   <li>New Service 2</li>
                   <li>New Service 3</li>
                 </ul>
@@ -53,7 +53,7 @@
                 </ul>
 
 
-                 <li>
+                 <li class="collapsehead">
                   <a href="#">
                   <i class="fa fa-user fa-lg"></i> Profile
                   </a>
@@ -81,9 +81,9 @@
           <span>Welcome,</span><span class="username username-hide-on-mobile"> RamaKrishnan</span>
         </a>
       </span>
-   <span class="pull-right menu_icon page"> <i class="fa fa-id-card-o" aria-hidden="true"></i> &nbsp; My Profile</span>
+   <span class="pull-right menu_icon page" routerLink="/profile" routerLinkActive="active1"> <i class="fa fa-id-card-o" aria-hidden="true"></i> &nbsp; My Profile</span>
       
-      <span routerLink="/about" class="pull-right menu_icon page"><i class="fa fa-address-card" aria-hidden="true"></i> &nbsp;  About us</span>
+      <span routerLink="/about" routerLinkActive="active1"class="pull-right menu_icon page"><i class="fa fa-address-card" aria-hidden="true"></i> &nbsp;  About us</span>
 
       <span class="pull-right menu_icon page" routerLink="/heroes" routerLinkActive="active1">  <i class="fa fa-phone-square" aria-hidden="true"></i> &nbsp; Contact us</span>
 
@@ -93,6 +93,8 @@
   
 
 
+<div class="usercontent">
+  
        <span class="userdetail hidden-lg">
         <a href="#">
           <img class="img-circle" alt="" src="../img/blue-user-icon-32.jpg">
@@ -102,6 +104,7 @@
 
   <span class="userdetail hidden-lg "  (click)="isClassVisible = !isClassVisible;"  style="color: white;float: right;margin-right:20px"><i class="fa fa-ellipsis-v fa-2x " aria-hidden="true"></i>
 </span>
+</div>
 </div>
 </div>
 

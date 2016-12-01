@@ -1,0 +1,103 @@
+<div class="container-fluid" >
+  <div class="pagecontentbar">
+    <div class="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+
+        <!--<div class="page-header">
+            <h1>
+                <span>Angular2 DataTable component</span><br/>
+                <small>by mariuszfoltak</small>
+            </h1>
+        </div>
+        -->
+
+        <div class="row">
+            <h2 class="col-xs-6">View Invoice</h2>
+            <!--<div class="col-xs-2">
+                <label class="label-control">Rows on page</label>
+                <select class="form-control input-sm" [(ngModel)]="rowsOnPage">
+                    <option [ngValue]="5">5</option>
+                    <option [ngValue]="10">10</option>
+                    <option [ngValue]="15">15</option>
+                </select>
+            </div>-->
+            <!--<div class="col-xs-4">
+                <div class="row">
+                    <label class="col-xs-12 label-control">Sort by</label>
+                </div>
+                <div class="col-xs-6">
+                    <div class="row">
+                        <select class="form-control input-sm" [(ngModel)]="sortBy">
+                            <option ngValue="month">Month</option>
+                            <option ngValue="year">Year</option>
+                            <option ngValue="amount">Amount</option>
+                            <option ngValue="paidAmount">Paid Amount</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="row">
+                        <select class="form-control input-sm" [(ngModel)]="sortOrder">
+                            <option ngValue="asc">Ascending</option>
+                            <option ngValue="desc">Descending</option>
+                        </select>
+                    </div>
+                </div>
+            </div>-->
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" style="text-align: right !important;">
+                
+                <select class="col-xs-2,form-control input-sm" [(ngModel)]="rowsOnPage" >
+                    <option [ngValue]="5">5</option>
+                    <option [ngValue]="10">10</option>
+                    <option [ngValue]="15">15</option>
+                </select>
+            </div>
+
+            
+
+            <table class="table table-striped" [mfData]="data | dataFilter : filterQuery" #mf="mfDataTable"
+                   [mfRowsOnPage]="rowsOnPage" [(mfSortBy)]="sortBy" [(mfSortOrder)]="sortOrder">
+                <thead>
+                <tr>
+                    <th style="width: 20%">
+                        <mfDefaultSorter [by]="getMonthVal">Month</mfDefaultSorter>
+                    </th>
+                    <th style="width: 20%">
+                        <mfDefaultSorter by="year">Year</mfDefaultSorter>
+                    </th>
+                    <th style="width: 20%">
+                        <mfDefaultSorter by="amount">Amount</mfDefaultSorter>
+                    </th>
+					<th style="width: 20%">
+                        <mfDefaultSorter by="paidAmount">Paid Amount</mfDefaultSorter>
+                    </th>
+                </tr>
+                <tr>
+                    <!--<th colspan="5">
+                        Filter by name:
+                        <input class="form-control" [(ngModel)]="filterQuery"/>
+                    </th>-->
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let item of mf.data" >
+                   
+                    <td>{{item.month}}</td>
+                    <td>{{item.year}}</td>
+                    <td>{{item.amount}}</td>
+					<td>{{item.paidAmount}}</td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td colspan="5">
+                        <mfBootstrapPaginator [rowsOnPageSet]=""></mfBootstrapPaginator>
+                    </td>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
+</div>

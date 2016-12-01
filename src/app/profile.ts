@@ -2,12 +2,12 @@ import { Component, Input } from '@angular/core';
 
 
 @Component({
-  selector: 'about',
- templateUrl: './about.html',
+  selector: 'my-hero-detail',
+    templateUrl: './profile.html',
     styleUrls: ['./dashboard.css']
-    
+  
 })
-export class AboutComponent {
 
-
+export class profileComponent {
+  
 }
