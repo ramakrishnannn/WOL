@@ -3,8 +3,8 @@ import {Http} from "@angular/http";
 
 @Component({
   selector: 'app-paymenthistory',
-  templateUrl: './paymenthistory.component.html',
-  styleUrls: ['./paymenthistory.component.css']
+  templateUrl: '../html/paymenthistory.component.html',
+  styleUrls: ['../css/paymenthistory.component.css']
 })
 export class PaymenthistoryComponent implements OnInit {
 
@@ -65,12 +65,12 @@ export class PaymenthistoryComponent implements OnInit {
      public getMonthVal = (a: any) => {
         return new Date(a.month+'-1-01').getMonth()+1;
     }
-  
-    
+
+
 }
 
 
 export class SmartTablesService {
 
- 
+
 }
