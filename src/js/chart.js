@@ -91,3 +91,8 @@ jQuery('.chart-input').off().on('input change',function() {
     target[property] = this.value;
     chart.validateNow();
 });
+
+
+$('.carousel').carousel();
+
+

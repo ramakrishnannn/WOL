@@ -2,25 +2,29 @@ import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule }   from '@angular/router';
 
-import { AppComponent }  from './app.component';
-import { HeroDetailComponent } from './hero-detail.component';
-import { NavBarComponent } from './nav-bar.component';
-import { SideBarComponent } from './sidebar.component';
-import { DashboardComponent } from './dashboard.component';
-import { AboutComponent } from './about';
-import { profileComponent } from './profile';
-import { MakePaymentComponent } from './app.makepayment.component';
+import { AppComponent }  from './script/app.component';
+import { NavBarComponent } from './script/nav-bar.component';
+import { SideBarComponent } from './script/sidebar.component';
+import { DashboardComponent } from './script/dashboard.component';
+import { AboutComponent } from './script/about';
+import { profileComponent } from './script/profile';
+import { MakePaymentComponent } from './script/app.makepayment.component';
+import { ContactComponent } from './script/contact';
+import { CheckComponent } from './script/check';
+import { CardComponent } from './script/card';
+import { QuickpayComponent } from './script/quickpay';
 
 
 /**/
 import { HttpModule } from "@angular/http";
 import { DataTableModule } from "angular2-datatable";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { DataFilterPipe }   from './invoice/data-filter.pipe';
+import { DataFilterPipe }   from './script/data-filter.pipe';
 
-import { InvoiceComponent } from './invoice/invoice.component';
-import { TroubleticketsComponent } from './troubletickets/troubletickets.component';
-import { ControlMessagesComponent } from './troubletickets/control-messages.component';
+import { InvoiceComponent } from './script/invoice.component';
+import { TroubleticketsComponent } from './script/troubletickets.component';
+import { ControlMessagesComponent } from './script/control-messages.component';
+import { PaymenthistoryComponent } from './script/paymenthistory.component';
 /**/
 @NgModule({
   imports: [
@@ -34,13 +38,29 @@ import { ControlMessagesComponent } from './troubletickets/control-messages.comp
     path: 'profile',
     component: profileComponent
   },
-  {
-    path: 'heroes',
-    component: HeroDetailComponent
+    {
+    path: 'paymenthistory',
+    component: PaymenthistoryComponent
+  },
+   {
+    path: 'quick',
+    component: QuickpayComponent
+  },
+   {
+    path: 'card',
+    component: CardComponent
+  },
+   {
+    path: 'check',
+    component: CheckComponent
   },
   {
     path: 'dashboard',
     component: DashboardComponent
+  },
+    {
+    path: 'contact',
+    component: ContactComponent
   },
   {
     path: 'payment',
@@ -68,7 +88,9 @@ import { ControlMessagesComponent } from './troubletickets/control-messages.comp
   ],
   declarations: [
     AppComponent,
-    HeroDetailComponent,
+    QuickpayComponent,
+    CardComponent,
+    CheckComponent,
     NavBarComponent,
     SideBarComponent,
     DashboardComponent,
@@ -78,7 +100,9 @@ import { ControlMessagesComponent } from './troubletickets/control-messages.comp
 	 InvoiceComponent,
     DataFilterPipe,
     TroubleticketsComponent,
-    ControlMessagesComponent
+    ControlMessagesComponent,
+    ContactComponent,
+    PaymenthistoryComponent
 
   ],
   bootstrap: [ AppComponent ]
