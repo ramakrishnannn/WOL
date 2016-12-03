@@ -1,3 +1,4 @@
+
 .pagecontentbar{
 
   padding-top: 10px;
@@ -58,7 +59,7 @@ margin-left: 200px;
 
 /* Card Box */
 .card-box {
-  padding: 20px;
+  padding: 5px;
   box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.06), 0 1px 0px 0 rgba(0, 0, 0, 0.02);
   -webkit-border-radius: 5px;
   border-radius: 5px;
@@ -117,4 +118,27 @@ margin-left: 200px;
    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
     -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+.pagenation ol > li{
+
+  display: inline-block;
+
+}
+.icon{
+  border:1px solid;
+  border-radius: 50%;
+width: 16%;
+height: auto;
+padding-top: 1%;
+text-align: center;
+margin: auto;
+padding-bottom: 10px;
+}
+.sidelist{
+  border-bottom: 1px solid #DBDBDB;
+}
+.modal-body ul >li{
+  list-style: none;
+  display: inline-block;
+  cursor: pointer;
 }

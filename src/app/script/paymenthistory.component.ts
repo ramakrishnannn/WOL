@@ -3,8 +3,8 @@ import {Http} from "@angular/http";
 
 @Component({
   selector: 'app-paymenthistory',
-  templateUrl: './paymenthistory.component.html',
-  styleUrls: ['./paymenthistory.component.css']
+  templateUrl: '../html/paymenthistory.component.html',
+  styleUrls: ['../css/paymenthistory.component.css']
 })
 export class PaymenthistoryComponent implements OnInit {
 
