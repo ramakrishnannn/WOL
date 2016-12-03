@@ -65,12 +65,12 @@ export class PaymenthistoryComponent implements OnInit {
      public getMonthVal = (a: any) => {
         return new Date(a.month+'-1-01').getMonth()+1;
     }
-  
-    
+
+
 }
 
 
 export class SmartTablesService {
 
- 
+
 }
