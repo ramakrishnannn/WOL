@@ -33,6 +33,11 @@
         <div class="menu-list">
   
             <ul id="menu-content" class="menu-content collapse out">
+            	<li  class="collapsehead" style="border-top: 1px solid #23282e;">
+                  <a href="#">
+                  <i class="fa fa-dashboard fa-lg"></i> Home
+                  </a>
+                </li>
                 <li  class="collapsehead" style="border-top: 1px solid #23282e;">
                   <a href="#">
                   <i class="fa fa-dashboard fa-lg"></i> Dashboard
@@ -44,6 +49,8 @@
                 </li>
                 <ul class="sub-menu collapse" id="products">
                  <li routerLink="/payment" routerLinkActive="active1"><a>Make Payment</a></li>
+                   <li (click)="gotoHeroes()"><a>Biling</a></li>
+                 
                      <li routerLink="/createtroubleticket" routerLinkActive="active1"><a> Create Trouble Ticket</a></li>
                     <li routerLink="/viewinvoice" routerLinkActive="active1"><a>View Invoice Details</a></li>   
                     <li><a href="#">Auto Payment</a></li>

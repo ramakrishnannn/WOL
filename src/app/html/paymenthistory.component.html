@@ -11,7 +11,9 @@
         -->
 
         <div class="row">
-            <h3 class="col-xs-6">Payment History</h3>
+            <div class="panel-heading">
+                                    <h4>Payment History</h4>
+                                </div>
             <!--<div class="col-xs-2">
                 <label class="label-control">Rows on page</label>
                 <select class="form-control input-sm" [(ngModel)]="rowsOnPage">
@@ -60,13 +62,13 @@
                    [mfRowsOnPage]="rowsOnPage" [(mfSortBy)]="sortBy" [(mfSortOrder)]="sortOrder">
                 <thead>
                 <tr>
-                    <th style="width: 30%">
+                    <th>
                         <mfDefaultSorter by="mode">Mode Of Payment</mfDefaultSorter>
                     </th>    
-                    <th style="width: 30%">
+                    <th >
                         <mfDefaultSorter by="paidDate">Date of Payment</mfDefaultSorter>
                     </th>
-                    <th style="width: 30%">
+                    <th >
                         <mfDefaultSorter by="paidAmount">Amount Paid</mfDefaultSorter>
                     </th>
                 </tr>

@@ -3,62 +3,61 @@ var chart = AmCharts.makeChart("chartdiv", {
     "type": "serial",
     "dataProvider": [{
         "country": "Jan",
-        "year2004": 3.5,
-        "year2005": 4.2
+        "year2005": 420
     }, {
         "country": "Feb",
-        "year2004": 1.7,
-        "year2005": 3.1
+
+        "year2005": 301
     }, {
         "country": "March",
-        "year2004": 2.8,
-        "year2005": 2.9
+    
+        "year2005": 290
     }, {
         "country": "April",
-        "year2004": 2.6,
-        "year2005": 2.3
+  
+        "year2005": 230
     }, {
         "country": "May",
-        "year2004": 1.4,
-        "year2005": 2.1
+
+        "year2005": 210
     }, {
         "country": "June",
-        "year2004": 2.6,
-        "year2005": 4.9
+
+        "year2005": 409
     }, {
         "country": "July",
-        "year2004": 6.4,
-        "year2005": 7.2
+ 
+        "year2005": 720
     }, {
         "country": "Aug",
-        "year2004": 8,
-        "year2005": 7.1
+  
+        "year2005": 710
     }, {
         "country": "Sep",
-        "year2004": 9.9,
-        "year2005": 10.1
+      
+        "year2005": 101
     },
      {
         "country": "Oct",
-        "year2004": 9.9,
-        "year2005": 10.1
+       
+        "year2005": 101
     }],
     "valueAxes": [{
         "stackType": "3d",
-        "unit": "%",
-        "position": "left",
-        "title": "Coneection Usage rate",
+        "unit": "$",
+        "position": "right",
+        "title": "Bill Amount",
     }],
     "startDuration": 1,
     "graphs": [{
-        "balloonText": "Connection Usage in [[category]] (This year): <b>[[value]]</b>",
+        "balloonText": "Bill Amount in [[category]] (This year): <b>[[value]]</b>",
         "fillAlphas": 0.9,
         "lineAlpha": 0.2,
         "title": "2004",
         "type": "column",
         "valueField": "year2004"
     }, {
-        "balloonText": "Connection Usage in [[category]] (Last year): <b>[[value]]</b>",
+        "balloonText": "Bill Amount in [[category]] : <b>[[value]]</b>",
         "fillAlphas": 0.9,
         "lineAlpha": 0.2,
         "title": "2005",
@@ -96,3 +95,58 @@ jQuery('.chart-input').off().on('input change',function() {
 $('.carousel').carousel();
 
 
+$(function() {
+  $('form.require-validation').bind('submit', function(e) {
+    var $form         = $(e.target).closest('form'),
+        inputSelector = ['input[type=email]', 'input[type=password]',
+                         'input[type=text]', 'input[type=file]',
+                         'textarea'].join(', '),
+        $inputs       = $form.find('.required').find(inputSelector),
+        $errorMessage = $form.find('div.error'),
+        valid         = true;
+
+    $errorMessage.addClass('hide');
+    $('.has-error').removeClass('has-error');
+    $inputs.each(function(i, el) {
+      var $input = $(el);
+      if ($input.val() === '') {
+        $input.parent().addClass('has-error');
+        $errorMessage.removeClass('hide');
+        e.preventDefault(); // cancel on first error
+      }
+    });
+  });
+});
+
+$(function() {
+  var $form = $("#payment-form");
+
+  $form.on('submit', function(e) {
+    if (!$form.data('cc-on-file')) {
+      e.preventDefault();
+      Stripe.setPublishableKey($form.data('stripe-publishable-key'));
+      Stripe.createToken({
+        number: $('.card-number').val(),
+        cvc: $('.card-cvc').val(),
+        exp_month: $('.card-expiry-month').val(),
+        exp_year: $('.card-expiry-year').val()
+      }, stripeResponseHandler);
+    }
+  });
+
+  function stripeResponseHandler(status, response) {
+    if (response.error) {
+      $('.error')
+        .removeClass('hide')
+        .find('.alert')
+        .text(response.error.message);
+    } else {
+      // token contains id, last4, and card type
+      var token = response['id'];
+      // insert the token into the form so it gets submitted to the server
+      $form.find('input[type=text]').empty();
+      $form.append("<input type='hidden' name='reservation[stripe_token]' value='" + token + "'/>");
+      $form.get(0).submit();
+    }
+  }
+})

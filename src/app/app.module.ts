@@ -25,6 +25,9 @@ import { InvoiceComponent } from './script/invoice.component';
 import { TroubleticketsComponent } from './script/troubletickets.component';
 import { ControlMessagesComponent } from './script/control-messages.component';
 import { PaymenthistoryComponent } from './script/paymenthistory.component';
+import { HomeComponent } from './script/home.component';
+import { BillingComponent } from './script/billing.component';
+
 /**/
 @NgModule({
   imports: [
@@ -80,8 +83,21 @@ import { PaymenthistoryComponent } from './script/paymenthistory.component';
     component: TroubleticketsComponent
   },
   {
+    path: 'home',
+    component: HomeComponent
+  },
+   {
+    path: 'billing',
+    component: BillingComponent
+  },
+  {
   path: '',
-  redirectTo: '/dashboard',
+  redirectTo: '/home',
+  pathMatch: 'full'
+},
+  {
+  path: './billing',
+  redirectTo: '/billing',
   pathMatch: 'full'
 }
 ])
@@ -102,7 +118,9 @@ import { PaymenthistoryComponent } from './script/paymenthistory.component';
     TroubleticketsComponent,
     ControlMessagesComponent,
     ContactComponent,
-    PaymenthistoryComponent
+    PaymenthistoryComponent,
+    HomeComponent,
+    BillingComponent
 
   ],
   bootstrap: [ AppComponent ]

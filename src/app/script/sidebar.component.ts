@@ -1,6 +1,7 @@
 
 import { Component, Input } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'side-bar',
@@ -11,9 +12,13 @@ import { Routes, RouterModule } from '@angular/router';
 export class SideBarComponent {
 isClassVisible: false;
 issubmenu:false;
-  
-  constructor() {
+
+  constructor(private router: Router) {
+
   }
 
- 
+   	gotoHeroes() {
+   		window.location.href = '/billing';
+  
+}
 }

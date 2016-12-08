@@ -1,7 +1,15 @@
-<div class="auth-main">
-  <div class="auth-block">
-    <h3>Create Trouble Ticket</h3>
 
+<div class="container">
+<div _ngcontent-dkq-18="" class="row">
+        <div _ngcontent-dkq-18="" class="mainBar col-sm-8">
+            
+
+            <div _ngcontent-dkq-18="" class="mainBarItem whiteBackGround row panel panel-group" style="margin-top: 20px">
+                <div _ngcontent-dkq-18="" class="panel-heading">
+                    <h3 _ngcontent-dkq-18="">Create Trouble Ticket</h3>
+                </div>
+                <div _ngcontent-dkq-18="" class="panel-body">
+          
     <form [formGroup]="userForm" (submit)="saveUser()" class="form-horizontal">
       <div class="form-group row" [ngClass]="{'has-error': (!userForm.controls.name.valid && userForm.controls.name.touched)}">
         <label for="name" class="col-sm-2 control-label">Name</label>
@@ -63,5 +71,14 @@
         </div>
       </div>
     </form>
-  </div>
-</div>
+                </div>
+                
+            </div>
+
+            
+
+        </div>
+
+        
+ </div>
+ </div>
