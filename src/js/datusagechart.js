@@ -2,36 +2,21 @@ var chart = AmCharts.makeChart( "chartdatausage", {
   "type": "pie",
   "theme": "light",
   "titles": [ {
-    "text": "Visitors countries",
+    "text": "",
     "size": 16
   } ],
   "dataProvider": [ {
-    "country": "United States",
-    "visits": 7252
+    "Type": "International calls",
+    "calls": 7252
   }, {
-    "country": "China",
-    "visits": 3882
+    "Type": "Operator calls",
+    "calls": 3882
   }, {
-    "country": "Japan",
-    "visits": 1809
-  }, {
-    "country": "Germany",
-    "visits": 1322
-  }, {
-    "country": "United Kingdom",
-    "visits": 1122
-  }, {
-    "country": "France",
-    "visits": 414
-  }, {
-    "country": "India",
-    "visits": 384
-  }, {
-    "country": "Spain",
-    "visits": 211
-  } ],
-  "valueField": "visits",
-  "titleField": "country",
+    "Type": "Domestic calls",
+    "calls": 1809
+  }],
+  "valueField": "calls",
+  "titleField": "Type",
   "startEffect": "elastic",
   "startDuration": 2,
   "labelRadius": 15,

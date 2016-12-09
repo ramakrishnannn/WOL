@@ -15,7 +15,7 @@ AmCharts.themes.light = {
 	},
 
 	AmSlicedChart: {
-		colors: ["#449d44", "#c9302c", "#84b761", "#cc4748", "#cd82ad", "#2f4074", "#448e4d", "#b7b83f", "#b9783f", "#b93e3d", "#913167"],
+		colors: ["#449d44", "#fdd400", "#84b761", "#cc4748", "#cd82ad", "#2f4074", "#448e4d", "#b7b83f", "#b9783f", "#b93e3d", "#913167"],
 		outlineAlpha: 1,
 		outlineThickness: 2,
 		labelTickColor: "#000000",
