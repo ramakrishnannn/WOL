@@ -1,6 +1,12 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ValidationService } from './validation.service';
+import { TroubleticketsService } from './troubletickets.service';
+import { Troubleticket } from './troubleticket.interface';
+import { Http,Response } from '@angular/http';
+import { CanActivate, Router } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-troubletickets',
@@ -9,8 +15,10 @@ import { ValidationService } from './validation.service';
 })
 export class TroubleticketsComponent {
   userForm: any;
+  private troubleticketsService: TroubleticketsService;
   
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder,protected http: Http,private router: Router) {
+    
       
     this.userForm = this.formBuilder.group({
       'name': ['', Validators.required],
@@ -20,11 +28,73 @@ export class TroubleticketsComponent {
       'description': ['', [Validators.required, Validators.minLength(10)]]
     });
   }
+
+submitForm(myForm) {
+ if (!this.userForm.valid) {
+      return '/home';
+  }
+  var result;
+  if (this.userForm.dirty && this.userForm.valid) {
+    result = this.addTickets(JSON.stringify(myForm.value));
+    if(result!="error"){
+   this.router.navigate(['./viewticket']);
+    }
+}
+ }
+
+
+  addTickets(formData){
+    this.http.post('http://192.168.26.60:8080/tickets/create',formData)
+        .map(res => res.json())
+        .subscribe(
+          (data) => {
+            this.userForm.email = data.id;
+          },
+          (response: Response) => {
+            this.handleError(response);
+            return "error";
+          }
+        );
+        return "success";
+  }
+
+
+    /**
+   * Handle errors
+   * @param response
+   */
+  handleError(response: Response) {
+    if (response.status === 422) {
+      let errors : Object = response.json();
+      console.log(errors);
+      for (var field in errors) {
+        var fieldErrors: string[] = (<any>errors)[field];
+        
+      }
+    }
+
+    console.log(response);
+  }
   
   saveUser() {
-    if (this.userForm.dirty && this.userForm.valid) {
 
-      alert('Ticket Created Successfully');
+    console.log(this.userForm);
+    if (!this.userForm.valid) {
+      return '/home';
     }
+    console.log(this.userForm.value);
+
+
+
+  alert(this.userForm.value);
+
+ 
+  alert(this.userForm);
+
+   var result,
+        userValue = this.userForm.value;
+
+    alert(userValue);
+ 
   }
 }

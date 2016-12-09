@@ -2759,7 +2759,7 @@
             }
         },
         brr: function() {
-            if (!this.hideCredits) {
+            if (this.hideCredits) {
                 var a = "amcharts.com",
                     b = window.location.hostname.split("."),
                     c;

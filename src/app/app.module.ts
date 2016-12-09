@@ -14,7 +14,8 @@ import { CheckComponent } from './script/check';
 import { CardComponent } from './script/card';
 import { QuickpayComponent } from './script/quickpay';
 
-
+import {LoginComponent} from './script/login';
+import {PrivateComponent} from './script/privatecomponent';
 /**/
 import { HttpModule } from "@angular/http";
 import { DataTableModule } from "angular2-datatable";
@@ -27,6 +28,7 @@ import { ControlMessagesComponent } from './script/control-messages.component';
 import { PaymenthistoryComponent } from './script/paymenthistory.component';
 import { HomeComponent } from './script/home.component';
 import { BillingComponent } from './script/billing.component';
+import { ViewticketComponent } from './script/viewticket.component';
 
 /**/
 @NgModule({
@@ -41,6 +43,11 @@ import { BillingComponent } from './script/billing.component';
     path: 'profile',
     component: profileComponent
   },
+    {
+    path: 'login',
+    component: LoginComponent
+  },
+
     {
     path: 'paymenthistory',
     component: PaymenthistoryComponent
@@ -90,6 +97,10 @@ import { BillingComponent } from './script/billing.component';
     path: 'billing',
     component: BillingComponent
   },
+   {
+    path: 'viewticket',
+    component: ViewticketComponent
+  },
   {
   path: '',
   redirectTo: '/home',
@@ -120,7 +131,10 @@ import { BillingComponent } from './script/billing.component';
     ContactComponent,
     PaymenthistoryComponent,
     HomeComponent,
-    BillingComponent
+    BillingComponent,
+    LoginComponent,
+    PrivateComponent,
+        ViewticketComponent
 
   ],
   bootstrap: [ AppComponent ]

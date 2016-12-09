@@ -34,7 +34,7 @@
 						</div>
 						<div class="widget-detail-1">
 							<span><a>
-									<button type="button" class="btn btn-success" data-toggle="modal" data-target=".bs-example-modal-lg">Pay My Bill >></button>
+									<button type="button" class="btn btn-success" data-toggle="modal" data-target=".bs-example-modal-lg" routerLink="/payment" routerLinkActive="active1">Pay My Bill >></button>
 							</a>
                             </span>
                           <span style=" float: right;">  <a href="/payment"><button class="btn btn-success">View Bill >></button></a>
@@ -211,35 +211,37 @@
 				 
 				</div>
 
-				<div class="sidebarItem whiteBackGround row panel panel-success">
+							<div class="sidebarItem whiteBackGround row panel panel-success">
 
 					<div class="panel-body">
 						<h4>Open Tickets</h4>
 						<div class="custinfo table-responsive">
-                            <table class="table table-striped">
+                            <table class="table table-striped"   [mfData]="data | dataFilter : filterQuery" #mf="mfDataTable"
+                   [mfRowsOnPage]="rowsOnPage" [(mfSortBy)]="sortBy" [(mfSortOrder)]="sortOrder">
+                               <thead>
                                 <tr>
                                     <th><b>Category</b></th>
                                     <th><b>Status</b></th>
                                 </tr>
-                                <tr>
-                                    <td>Billing and Payments</td>
-                                    <td>Open</td>
-                                </tr>
-                                <tr>
-                                    <td>Internet</td>
-                                    <td>Closed</td>
-                                </tr>
+                                </thead>
+                                <tbody>
+                            <tr *ngFor="let item of mf.data" >
+                               
+                                <td>{{item.name}}</td>
+                                <td>OPEN</td>
+                            </tr>
+                            </tbody>
                             </table>
                         </div>
                         <div class="widget-detail-1" style="text-align: center;">
-                                        <button class="btn btn-success">View All Tickets</button>
+                                        <a href="/viewticket"><button class="btn btn-success">View All Tickets</button></a>
                                     </div>
 					</div>
                        <div>
                     &nbsp; &nbsp; &nbsp;
                     </div>
 				</div>
-
+				
 				<div class="sidebarItem whiteBackGround row panel panel-success">
 				
 				  	<div class="panel-body" style="padding-left: 13px;">

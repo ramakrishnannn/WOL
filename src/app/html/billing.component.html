@@ -1,196 +1,84 @@
 <div class="pagecontentbar" style="">
-	<div class="container">
-					<div class="form-group container pull-right">
-<select name="carlist" form="carform">
-  <option>Jan</option>
-  <option>Feb</option>
-  <option>Mar</option>
-  <option >Apr</option>
-  <option>May</option>
-  <option>Jun</option>
-  <option>Apr</option>
-  <option >May</option>
-  <option>Jun</option>
-  <option>Jul</option>
-  <option>Aug</option>
-  <option >Sep</option>
-  <option>Oct</option>
-  <option>Nov</option>
-  <option>Mar</option>
-  <option selected>Dec</option>
-</select>
+<div class="col-md-offset-8 col-lg-4" style="padding-bottom: 10px;">
+<div class="input-group date" id='date' style="cursor: pointer;">
+   <input type='text' class="form-control" id="dateval" />
+      <span class="input-group-addon">
+      <span class="fa fa-calendar"></span>
+   </span>
+</div> 
 </div>
-</div>
-	<div class="container">
-			<div class="mainBar col-lg-6">
-				<div class="mainBarItem whiteBackGround row">
-					<div class="panel-heading">
-						<h3>Account Details</h3>
-											<div class="panel-body">
-
-					</div>
-
-
-					    <ul class="list-group">
-						  <li class="list-group-item">
-						    <span class="tag tag-default tag-pill float-xs-right" style="float: right;">Previous Balance : $32.46</span>
-						    Bill Date : 11/15/2016
-						  </li>
-						  <li class="list-group-item">
-						    <span class="tag tag-default tag-pill float-xs-right" style="float: right;">Payment & Adjustment : $10.00</span>
-						    Account Number : 160317624
-						  </li>
-						  <li class="list-group-item">
-						    <span class="tag tag-default tag-pill float-xs-right" style="float: right;">Past Due : $20.00</span>
-						    Customer Name : Marcus Doe
-						  </li>
-						   <li class="list-group-item">
-						    <span class="tag tag-default tag-pill float-xs-right" style="float: right;">Total Charges : $55.46</span>
-						    Billing Number : 804-325-5379
-						  </li>
-						   <li class="list-group-item">
-						    <span class="tag tag-default tag-pill float-xs-right" style="float: right;">Total Amount Due :  $57.92</span>
-						    Due Date : 15/01/2017
-						  </li>
-						</ul>
-						
-						 <div class="widget-detail-1" style="text-align: center;">
-                                                <button class="btn btn-success" style="margin-top: 10px;" data-toggle="modal" data-target=".bs-example-modal-lg">Pay My Bill</button>
+<div class="col-lg-8">
+ <div class="panel panel-success">
+  <div class="panel-heading">
+    <h3 class="panel-title">Account Details</h3>
+  </div>
+  <div class="panel-body">
+  
+              <ul class="list-group">
+              <li class="list-group-item">
+                <span class="tag tag-default tag-pill float-xs-right" style="float: right;">Previous Balance : $32.46</span>
+                Bill Date : 11/15/2016
+              </li>
+              <li class="list-group-item">
+                <span class="tag tag-default tag-pill float-xs-right" style="float: right;">Payment & Adjustment : $10.00</span>
+                Account Number : 160317624
+              </li>
+              <li class="list-group-item">
+                <span class="tag tag-default tag-pill float-xs-right" style="float: right;">Past Due : $20.00</span>
+                Customer Name : Marcus Doe
+              </li>
+               <li class="list-group-item">
+                <span class="tag tag-default tag-pill float-xs-right" style="float: right;">Total Charges : $55.46</span>
+                Billing Number : 804-325-5379
+              </li>
+               <li class="list-group-item">
+                <span class="tag tag-default tag-pill float-xs-right" style="float: right;">Total Amount Due :  $57.92</span>
+                Due Date : 15/01/2017
+              </li>
+            </ul>
+            
+             <div class="widget-detail-1" style="text-align: center;">
+                                                <button class="btn btn-success" style="margin-top: 10px;" data-toggle="modal" data-target=".bs-example-modal-lg" routerLink="/payment" routerLinkActive="active1">Pay My Bill</button>
                                             </div>
-
-					</div>
-				</div>
-
-
-
-			</div>
-
-			<div class="col-lg-4 sidebar" >
-
-				<div class="sidebarItem whiteBackGround panel panel-success">
-					<div class="panel-body" style="padding-left: 13px;">
-						<h4>Bill Alerts</h4>
-					</div>
-					<div class="list-group">
-					<ol>
-					<li>		<p class="list-group-item-text">As a loyal customer you are receiving 30% Discount on bill.</p> </li>
-						<li>	 <p class="list-group-item-text">Your usage exceeds 300GB of fair uage policy.</p> </li>
-						<li>	<p class="list-group-item-text">Your latest bill for month of Jan is available.</p> </li>
-					</ol>
-					</div>
-
-					
-				</div>
-
-		
-			</div>
-
-
-			<div class="mainBar col-lg-12">
-				<div class="mainBarItem whiteBackGround row">
-					<div class="panel-heading">
-						<h3>Account Details</h3>
-					</div>
-					<div class="panel-body">
-
-					   <div class="well">
-    <ul class="nav nav-tabs">
-      <li class="active"><a href="#chartdiv" data-toggle="tab">Billing </a></li>
-      <li><a href="#chartdatausage" data-toggle="tab">Data Usage</a></li>
-    </ul>
-    <div id="col-lg-12" class="tab-content">
-      <div class="tab-pane active in" id="chartdiv">
-       
-      </div>
-      <div class="tab-pane fade" id="chartdatausage">
-      </div>
   </div>
-					</div>
-				</div>
+</div>
 
+ </div>
+<div class="col-lg-4"> 
 
-
-			</div>
-		</div>
-
-
+<div class="panel panel-success">
+  <div class="panel-heading">
+    <h3 class="panel-title">Bill Alerts</h3>
+  </div>
+  <div class="panel-body">
+        <div class="list-group">
+          <ol>
+          <li>    <p class="list-group-item-text">As a loyal customer you are receiving 30% Discount on bill.</p> </li>
+            <li>   <p class="list-group-item-text">Your usage exceeds 300GB of fair uage policy.</p> </li>
+            <li>  <p class="list-group-item-text">Your latest bill for month of Jan is available.</p> </li>
+          </ol>
+          </div>
+  </div>
+</div>
 
 
 </div>
-<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
 
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-    <div class='row'>
-       <div class='heading-bar'>Payment Method <span style="float: right;cursor: pointer;" data-toggle="modal" data-target=".bs-example-modal-lg"><i class="fa fa-times" aria-hidden="true"></i>
-</span></div>
-        <div class='col-md-4'></div>
-        <div class='col-md-4 modalbox'>
-          <form accept-charset="UTF-8" action="/" class="require-validation" data-cc-on-file="false" data-stripe-publishable-key="pk_bQQaTxnaZlzv4FnnuZ28LFHccVSaj" id="payment-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓" /><input name="_method" type="hidden" value="PUT" /><input name="authenticity_token" type="hidden" value="qLZ9cScer7ZxqulsUWazw4x3cSEzv899SP/7ThPCOV8=" /></div>
 
-             
-            <div class='form-row'>
-              <div class='col-xs-12 form-group required'>
-                <label class='control-label'>Name on Card</label>
-                <input class='form-control' size='4' type='text'>
-              </div>
-            </div>
-            <div class='form-row'>
-              <div class='col-xs-12 form-group card required'>
-                <label class='control-label'>Card Number</label>
-                <input autocomplete='off' class='form-control card-number' size='20' type='text'>
-              </div>
-            </div>
-            <div class='form-row'>
-              <div class='col-xs-4 form-group cvc required'>
-                <label class='control-label'>CVC</label>
-                <input autocomplete='off' class='form-control card-cvc' placeholder='ex. 311' size='4' type='text'>
-              </div>
-              <div class='col-xs-4 form-group expiration required'>
-                <label class='control-label'>Expiration</label>
-                <input class='form-control card-expiry-month' placeholder='MM' size='2' type='text'>
-              </div>
-              <div class='col-xs-4 form-group expiration required'>
-                <label class='control-label'> </label>
-                <input class='form-control card-expiry-year' placeholder='YYYY' size='4' type='text'>
-              </div>
-            </div>
-            <div class='form-row'>
-              <div class='col-md-12'>
-                <div class='form-control total btn btn-info'>
-                  Total:
-                  <span class='amount'>$300</span>
-                </div>
-              </div>
-            </div>
-            <div class='form-row'>
-              <div class='col-md-12 form-group'>
-                <button class='form-control btn btn-primary submit-button' type='submit'>Pay »</button>
-              </div>
-            </div>
-            <div class='form-row'>
-              <div class='col-md-12 error form-group hide'>
-                <div class='alert-danger alert'>
-                  Please correct the errors and try again.
-                </div>
-              </div>
-            </div>
-
-          </form>
-        </div>
-            <div class='form-row container'>
-              <div class='col-md-12 success form-group hide'>
-                <div class='alert-success alert'>
-                <span><i class="fa fa-check-circle" aria-hidden="true"></i>
-</span>
-                 Transaction successfull
-                </div>
-              </div>
-            </div>
-        <div class='col-md-4'></div>
-    </div>
-
+  <div class="col-lg-12">
+    <div class="panel panel-success">
+      <div class="panel-heading">
+        <h3 class="panel-title">Usage Deatails</h3>
+      </div>
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#chartdiv" data-toggle="tab">Billing </a></li>
+              <li><a href="#chartdatausage" data-toggle="tab">Data Usage</a></li>
+            </ul>
+          <div id="col-lg-12" class="tab-content">
+                <div class="tab-pane active in" id="chartdiv"></div>
+                <div class="tab-pane fade" id="chartdatausage"></div>
+          </div>
     </div>
   </div>
-</div>
+
 </div>

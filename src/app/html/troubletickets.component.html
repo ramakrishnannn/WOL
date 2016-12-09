@@ -10,7 +10,7 @@
                 </div>
                 <div _ngcontent-dkq-18="" class="panel-body">
           
-    <form [formGroup]="userForm" (submit)="saveUser()" class="form-horizontal">
+    <form [formGroup]="userForm" (submit)="submitForm(userForm)" class="form-horizontal">
       <div class="form-group row" [ngClass]="{'has-error': (!userForm.controls.name.valid && userForm.controls.name.touched)}">
         <label for="name" class="col-sm-2 control-label">Name</label>
 

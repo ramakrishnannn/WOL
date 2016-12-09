@@ -9,20 +9,37 @@
   <link rel="stylesheet" href="./fonts/font-awesome-4.7.0/css/font-awesome-animation.css">
 
   <link rel="icon" type="image/x-icon" href="favicon.png">
-    <link rel="stylesheet" type="text/css" href="./css/bootstrap/bootstrap.min.css">
-
-
-
+  <link rel="stylesheet" type="text/css" href="./css/bootstrap/bootstrap-datepicker.min.css">
+  <link rel="stylesheet" type="text/css" href="./css/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./css/main.css">
   <base href="/">
+<script type="text/javascript" src="./js/jquery.js"></script>
 
-  <script src="./amcharts/amcharts.js"></script>
-<script src="./amcharts/serial.js"></script>
-<script src="./amcharts/pie.js"></script>
-<script src="./amcharts/themes/light.js"></script>
-<script src="./js/chart.js"></script>
+<script>
+
+$(document).ready(function() {
+
+ $("#date").datepicker( {
+    format: "MM-yyyy",
+    viewMode: "months", 
+    minViewMode: "months",
+    autoclose:true,
+
+});
+var date = new Date();
+var monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
+var month=monthNames[date.getMonth()];
+var year = date.getFullYear(); 
+ var s=document.getElementById('dateval')
+ s.value = month+"-"+year;
+});
 
 
-<script src="./js/datusagechart.js"></script>
+</script>
+
+
 <style>
   body{
     background: #F4F4F4 !important;
@@ -31,10 +48,16 @@
 </head>
 <body>
   <my-app>Loading---</my-app>
-<script  src="./js/bootstrap/jquery-3.1.js"></script>
-  <script src="./js/bootstrap/bootstrap-datepicker.min.js"></script>
- <script src="./js/bootstrap/bootstrap.min.js"></script>
-<script src="./js/date.js"></script>
- <script type="text/javascript" src="./js/card.js"></script>
+
+  <script type="text/javascript" src="./js/bootstrap/bootstrap.min.js"></script>
+  <script type="text/javascript" src="./amcharts/amcharts.js"></script>
+<script type="text/javascript" src="./amcharts/serial.js"></script>
+<script type="text/javascript" src="./amcharts/pie.js"></script>
+<script type="text/javascript" src="./amcharts/themes/light.js"></script>
+<script type="text/javascript" src="./js/chart.js"></script>
+<script type="text/javascript" src="./js/datusagechart.js"></script>
+<script type="text/javascript" src="./js/bootstrap/bootstrap-datepicker.min.js"></script>
+<script type="text/javascript" src="./js/date.js"></script>
+
 </body>
 </html>

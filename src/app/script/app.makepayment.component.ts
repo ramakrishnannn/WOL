@@ -9,8 +9,18 @@ import { Component, Input } from '@angular/core';
 })
 export class MakePaymentComponent {
 
- isquickpay:false;
- iscard:false;
- ischeck:false;
- isonline:false;
+ step1: true;
+ isquickpay: false;
+ step3: false;
+ step4: false;
+
+  constructor() {
+
+  }
+
+  onSelect() {
+  	alert("hi");
+ isquickpay: true;
+
+  }
 }

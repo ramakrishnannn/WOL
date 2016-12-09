@@ -14,6 +14,7 @@ $(function() {
     $inputs.each(function(i, el) {
       var $input = $(el);
       if ($input.val() === '') {
+        alert("error");
         success = false;
         $input.parent().addClass('has-error');
         $errorMessage.removeClass('hide');
@@ -21,9 +22,11 @@ $(function() {
       }
     });
     if (success == true){
+            alert("success");
             $('.modalbox').addClass('hide');
            $('.success').removeClass('hide');
-
+            $('#step2').addClass('active');
+           $('#step1').removeClass('active');
            
       }
   });
