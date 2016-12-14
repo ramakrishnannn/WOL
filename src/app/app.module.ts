@@ -13,8 +13,6 @@ import { ContactComponent } from './script/contact';
 import { CheckComponent } from './script/check';
 import { CardComponent } from './script/card';
 import { QuickpayComponent } from './script/quickpay';
-
-import {LoginComponent} from './script/login';
 import {PrivateComponent} from './script/privatecomponent';
 /**/
 import { HttpModule } from "@angular/http";
@@ -43,11 +41,6 @@ import { ViewticketComponent } from './script/viewticket.component';
     path: 'profile',
     component: profileComponent
   },
-    {
-    path: 'login',
-    component: LoginComponent
-  },
-
     {
     path: 'paymenthistory',
     component: PaymenthistoryComponent
@@ -132,7 +125,6 @@ import { ViewticketComponent } from './script/viewticket.component';
     PaymenthistoryComponent,
     HomeComponent,
     BillingComponent,
-    LoginComponent,
     PrivateComponent,
         ViewticketComponent
 
