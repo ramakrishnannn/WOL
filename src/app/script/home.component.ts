@@ -9,7 +9,9 @@ import {Http} from "@angular/http";
 })
 export class HomeComponent implements OnInit {
 
-  	public data;
+  	public ticketData;
+  	public invoiceData;
+  	public invoiceDueData;
     public filterQuery = "";
     public rowsOnPage = 2;
     public sortBy = "name";
@@ -18,14 +20,37 @@ export class HomeComponent implements OnInit {
     constructor(private http: Http) {
     }
 
-    ngOnInit(): void {
-        this.http.get("http://192.168.26.60:8080/tickets/all")
-            .subscribe((data)=> {
-                setTimeout(()=> {
-                    this.data = data.json();
-                }, 1000);
-            });
-    }
+ngOnInit() {
+ this.getAllTickets();
+this.getInvoiceData();
+this.getInvoiceDueAmount();
+}
+  getAllTickets() {
+    this.http.get('http://192.168.26.60:8080/tickets/lasttwo')
+      .subscribe(
+        data => { this.ticketData = data.json()},
+        err => console.error(err),
+        () => console.log('done')
+      );
+  }
 
+
+  getInvoiceData() {
+    this.http.get('http://192.168.26.60:8080/invoice/last2Month')
+      .subscribe(
+        data => { this.invoiceData = data.json()},
+        err => console.error(err),
+        () => console.log('done')
+      );
+  }
+
+  getInvoiceDueAmount(){
+    this.http.get('http://192.168.26.60:8080/invoice/currectinvoice')
+      .subscribe(
+        data => { this.invoiceDueData = data.json()},
+        err => console.error(err),
+        () => console.log('done')
+      );
+  }
 
 }

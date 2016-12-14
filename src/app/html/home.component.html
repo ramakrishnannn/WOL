@@ -16,15 +16,17 @@
 						<h3>Account Details</h3>
 					</div>
 					<div class="panel-body">
-						<div class="custinfo table-responsive">
+						<div class="custinfo table-responsive" onload="getInvoiceDueAmount();">
+
+
 							<table class="table table-striped">
 								<tr>
 									<td><b>Bill Amount:</b></td>
-									<td>$55.46</td>
+									<td><span *ngFor="let b of invoiceDueData">${{b.amount - b.paidAmount}}</span></td>
 								</tr>
 								<tr>
 									<td><b>Due Date:</b></td>
-									<td>Jan 15 2017</td>
+									<td><span *ngFor="let b of invoiceDueData">{{b.dueDate}}</span></td>
 								</tr>
 								<tr>
 									<td><b>Auto Pay:</b></td>
@@ -50,24 +52,27 @@
 						<h3>Past Invoices</h3>
 					</div>
 					<div class="panel-body">
-						<div class="custinfo table-responsive">
-							<table class="table table-striped">
-                                <tr>
+						<div class="custinfo table-responsive" onload="getInvoiceData();">
+                        <table class="table table-striped"   [mfData]="data | dataFilter : filterQuery" #mf="mfDataTable"
+                   [mfRowsOnPage]="rowsOnPage" [(mfSortBy)]="sortBy" [(mfSortOrder)]="sortOrder">
+                               <thead>
+                               <tr>
                                     <th><b>Date</b></th>
                                     <th><b>Amount</b></th>
                                     <th><b>Link</b></th>
                                 </tr>
-								<tr>
-									<td>Dec 2016</td>
-									<td>$55.46</td>
-                                    <td>View Bill</td>
-								</tr>
-								<tr>
-                                    <td>Nov 2016</td>
-                                    <td>$32.46</td>
-                                    <td>View Bill</td>
-                                </tr>
-							</table>
+                                </thead>
+                                <tbody>
+                            <tr *ngFor="let a of invoiceData" >
+                               
+                                <td>{{a.month}} {{a.year}}</td>
+                                <td>${{a.amount}}</td>
+                                <td>View Bill</td>
+                            </tr>
+                            </tbody>
+                            </table>
+
+							
 						</div>
                         <div class="widget-detail-1" style="text-align: center;">
                                                 <a href="/billing"><button class="btn btn-success" style="margin-top: 10px;">View Invoices</button></a>
@@ -203,7 +208,7 @@
 
 					<div class="panel-body">
 						<h4>Open Tickets</h4>
-						<div class="custinfo table-responsive">
+						<div class="custinfo table-responsive" onload="getAllTickets();">
                             <table class="table table-striped"   [mfData]="data | dataFilter : filterQuery" #mf="mfDataTable"
                    [mfRowsOnPage]="rowsOnPage" [(mfSortBy)]="sortBy" [(mfSortOrder)]="sortOrder">
                                <thead>
@@ -213,7 +218,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                            <tr *ngFor="let item of mf.data" >
+                            <tr *ngFor="let item of ticketData" >
                                
                                 <td>{{item.name}}</td>
                                 <td>OPEN</td>
