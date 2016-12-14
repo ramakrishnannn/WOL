@@ -13,7 +13,6 @@ import { ContactComponent } from './script/contact';
 import { CheckComponent } from './script/check';
 import { CardComponent } from './script/card';
 import { QuickpayComponent } from './script/quickpay';
-import {PrivateComponent} from './script/privatecomponent';
 /**/
 import { HttpModule } from "@angular/http";
 import { DataTableModule } from "angular2-datatable";
@@ -125,7 +124,6 @@ import { ViewticketComponent } from './script/viewticket.component';
     PaymenthistoryComponent,
     HomeComponent,
     BillingComponent,
-    PrivateComponent,
         ViewticketComponent
 
   ],

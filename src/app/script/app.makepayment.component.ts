@@ -20,7 +20,7 @@ export class MakePaymentComponent {
 
   onSelect() {
   	alert("hi");
- isquickpay: true;
+ //isquickpay: true;
 
   }
 }
