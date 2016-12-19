@@ -3,8 +3,8 @@
 	color: #ffffff;
 	border: 1px solid white;
 border-radius: 8%;
-box-shadow: -2px -10px 72px -1px #65ffff;
 position: fixed;
+background-color: #53af53;
 
 }
 .panel{
@@ -17,9 +17,11 @@ position: fixed;
 }
  #wrapper {
             min-height: 100%; 
-            background: url(../images/login_bg1.jpg) no-repeat center center fixed; 
+            background: #f1f2f7 none repeat scroll 0 0;
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
       background-size: cover;
         }
+
+        

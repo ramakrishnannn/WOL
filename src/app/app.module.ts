@@ -16,10 +16,10 @@ import { DataTableModule } from "angular2-datatable";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DataFilterPipe }   from './script/data-filter.pipe';
 
-import { InvoiceComponent } from './script/invoice.component';
+import { InvoiceComponent } from './invoice/invoice.component';
 
 
-import { PaymenthistoryComponent } from './script/paymenthistory.component';
+import { PaymenthistoryComponent } from './paymenthistory/paymenthistory.component';
 import { HomeComponent } from './script/home.component';
 import { BillingComponent } from './billing/billing.component';
 import { ViewticketComponent } from './script/viewticket.component';
