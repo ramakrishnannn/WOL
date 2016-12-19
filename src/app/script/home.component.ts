@@ -7,7 +7,7 @@ import {CookieService} from 'angular2-cookie/core';
   selector: 'app-home',
   templateUrl: '../html/home.component.html',
   styleUrls: ['../css/home.component.css']
-  
+
 })
 export class HomeComponent implements OnInit {
   	public ticketData;
@@ -46,7 +46,7 @@ this.getInvoiceDueAmount();
 this.setcookie();
 }
   getAllTickets() {
-    this.http.get('http://192.168.26.60:8080/tickets/lasttwo')
+    this.http.get('http://localhost:8080/tickets/lasttwo')
       .subscribe(
         data => { this.ticketData = data.json()},
         err => console.error(err),
@@ -56,7 +56,7 @@ this.setcookie();
 
 
   getInvoiceData() {
-    this.http.get('http://192.168.26.60:8080/invoice/last2Month')
+    this.http.get('http://localhost:8080/invoice/last2Month')
       .subscribe(
         data => { this.invoiceData = data.json()},
         err => console.error(err),
@@ -65,7 +65,7 @@ this.setcookie();
   }
 
   getInvoiceDueAmount(){
-    this.http.get('http://192.168.26.60:8080/invoice/currectinvoice')
+    this.http.get('http://localhost:8080/invoice/currectinvoice')
       .subscribe(
         data => { this.invoiceDueData = data.json()},
         err => console.error(err),
