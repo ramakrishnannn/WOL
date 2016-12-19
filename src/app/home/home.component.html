@@ -21,7 +21,7 @@
             Welcome !
           </div>
           <div class="profile-usertitle-name">
-            Marcus Doe
+            {{currentUser.firstName}} {{currentUser.lastName}}
           </div>
           <div class="profile-usertitle-job">
            <i class="fa fa-phone-square" aria-hidden="true"></i>
@@ -33,7 +33,7 @@
         <div class="menu-list">
   
             <ul id="menu-content" class="menu-content collapse out">
-            	<li  class="collapsehead" style="border-top: 1px solid #23282e;">
+                <li  class="collapsehead" style="border-top: 1px solid #23282e;">
                   <a href="#">
                   <i class="fa fa-dashboard fa-lg"></i> Home
                   </a>
@@ -100,7 +100,7 @@
   <div class="Navigation_Menu" style="color: white">
 <div class="visible-lg">
   
-    <span class="pull-right menu_icon"><i class="fa fa-sign-out" aria-hidden="true"></i> &nbsp; Sign Out</span>
+    <span [routerLink]="['/login']" class="pull-right menu_icon"><i class="fa fa-sign-out" aria-hidden="true"></i> &nbsp; Sign Out</span>
      <span class="pull-right menu_icon page">  <i class="fa fa-info" aria-hidden="true"></i> &nbsp; Help</span>
    <span class="pull-right menu_icon page" routerLink="/profile" routerLinkActive="active1"> <i class="fa fa-id-card-o" aria-hidden="true"></i> &nbsp; My Profile</span>
       
@@ -119,7 +119,7 @@
        <span class="userdetail hidden-lg hidden-md hidden-sm">
         <a href="#">
           <img class="img-circle" alt="" src="../img/profile.jpg">
-          <span>Welcome,</span><span class="username username-hide-on-mobile"> RamaKrishnan</span>
+          <span>Welcome,</span><span class="username username-hide-on-mobile">  {{currentUser.firstName}} {{currentUser.lastName}}</span>
         </a>
       </span>
 
@@ -134,7 +134,7 @@
           <li routerLink="/profile" routerLinkActive="active1"><span><a>My Profile</a></span></li>
           <li routerLink="/about" routerLinkActive="active1"><span><a>About us</a></span></li>
           <li routerLink="/contact" routerLinkActive="active1"><span><a>Contact us</a></span></li>
-          <li><span><a>Sign Out</a></span></li>
+          <li><span><a [routerLink]="['/login']">Logout</a></span></li>
   </ul>
 
 
@@ -143,4 +143,3 @@
 </div>
 </div>
 </div>
-

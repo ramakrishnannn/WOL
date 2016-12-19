@@ -26,5 +26,34 @@ var chart = AmCharts.makeChart( "chartdatausage", {
   "angle": 15,
   "export": {
     "enabled": true
+  },
+        "responsive": {
+    "enabled": true
+  },
+} );
+
+
+var chart = AmCharts.makeChart( "chartdatausage2", {
+  "type": "pie",
+  "theme": "light",
+  "dataProvider": [ {
+    "title": "International calls",
+    "value": 4852
+  }, {
+    "title": "Operator calls",
+    "value": 9899
+  } ,{
+    "title": "Domestic calls",
+    "value": 9899
+  }],
+  "titleField": "title",
+  "valueField": "value",
+  "labelRadius": 5,
+
+  "radius": "42%",
+  "innerRadius": "60%",
+  "labelText": "[[title]]",
+  "export": {
+    "enabled": true
   }
 } );

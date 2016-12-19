@@ -4,12 +4,12 @@ import { RouterModule }   from '@angular/router';
 
 import { AppComponent }  from './script/app.component';
 import { NavBarComponent } from './script/nav-bar.component';
-import { SideBarComponent } from './script/sidebar.component';
+
 import { DashboardComponent } from './script/dashboard.component';
 import { AboutComponent } from './script/about';
 import { profileComponent } from './script/profile';
 import { MakePaymentComponent } from './script/app.makepayment.component';
-import { ContactComponent } from './script/contact';
+
 import { CheckComponent } from './script/check';
 import { CardComponent } from './script/card';
 import { QuickpayComponent } from './script/quickpay';
@@ -24,107 +24,73 @@ import { TroubleticketsComponent } from './script/troubletickets.component';
 import { ControlMessagesComponent } from './script/control-messages.component';
 import { PaymenthistoryComponent } from './script/paymenthistory.component';
 import { HomeComponent } from './script/home.component';
-import { BillingComponent } from './script/billing.component';
+import { BillingComponent } from './billing/billing.component';
 import { ViewticketComponent } from './script/viewticket.component';
+import { LoginComponent } from './login/login.component';
+/*-------------------------------final-----------------------------------------*/
+import { SideBarTopComponent } from './navigation/topbar/sidebartop';
+import { SideBarLeftComponent } from './navigation/leftbar/sidebar.component';
+import { ContactComponent } from './contactus/contact';
+import { DashboardTop } from './dashboard/top/dashboard-top';
+import { DashboardLeft } from './dashboard/left/dashboard-left';
+import { ContactLeftComponent } from './contactus/left/contact-left';
+import { ContactTopComponent } from './contactus/top/contact-top';
+
+import { BillingTopComponent } from './billing/top/billing-top';
+import { BillingLeftComponent } from './billing/left/billing-left';
 
 /**/
 @NgModule({
-  imports: [
+    imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     DataTableModule, 
     HttpModule,
     RouterModule.forRoot([
-       {
-    path: 'profile',
-    component: profileComponent
-  },
-    {
-    path: 'paymenthistory',
-    component: PaymenthistoryComponent
-  },
-   {
-    path: 'quick',
-    component: QuickpayComponent
-  },
-   {
-    path: 'card',
-    component: CardComponent
-  },
-   {
-    path: 'check',
-    component: CheckComponent
-  },
-  {
-    path: 'dashboard',
-    component: DashboardComponent
-  },
-    {
-    path: 'contact',
-    component: ContactComponent
-  },
-  {
-    path: 'payment',
-    component: MakePaymentComponent
-  },
-  {
-    path: 'about',
-    component:AboutComponent
-
-  },
-    {
-    path: 'viewinvoice',
-    component: InvoiceComponent
-  },
-   {
-    path: 'createtroubleticket',
-    component: TroubleticketsComponent
-  },
-  {
-    path: 'home',
-    component: HomeComponent
-  },
-   {
-    path: 'billing',
-    component: BillingComponent
-  },
-   {
-    path: 'viewticket',
-    component: ViewticketComponent
-  },
-  {
-  path: '',
-  redirectTo: '/home',
-  pathMatch: 'full'
-},
-  {
-  path: './billing',
-  redirectTo: '/billing',
-  pathMatch: 'full'
-}
-])
+      {path: '',redirectTo: '/login',pathMatch: 'full'},
+      {path: 'profile',component: profileComponent},
+      {path: 'paymenthistory',component: PaymenthistoryComponent},
+      {path: 'quick',component: QuickpayComponent},
+      {path: 'card',component: CardComponent},
+      {path: 'check',component: CheckComponent},
+      {path: 'dashboard',component: DashboardComponent},
+      {path: 'contact',component: ContactComponent},
+      {path: 'payment',component: MakePaymentComponent},
+      {path: 'about',component:AboutComponent},
+      {path: 'viewinvoice',component: InvoiceComponent},
+      {path: 'createtroubleticket',component: TroubleticketsComponent},
+      {path: 'home',component: HomeComponent},
+      {path: 'billing',component: BillingComponent},
+      {path: 'viewticket',component: ViewticketComponent},
+      {path: 'login',component: LoginComponent},
+      {path: './billing',redirectTo: '/billing',pathMatch: 'full'}
+    ])
   ],
   declarations: [
-    AppComponent,
-    QuickpayComponent,
-    CardComponent,
-    CheckComponent,
-    NavBarComponent,
-    SideBarComponent,
-    DashboardComponent,
-     AboutComponent,
-     profileComponent,
-     MakePaymentComponent,
-	 InvoiceComponent,
-    DataFilterPipe,
-    TroubleticketsComponent,
-    ControlMessagesComponent,
-    ContactComponent,
-    PaymenthistoryComponent,
-    HomeComponent,
-    BillingComponent,
-        ViewticketComponent
+  AppComponent,
+  QuickpayComponent,
+  CardComponent,
+  CheckComponent,
+  NavBarComponent,
+  DashboardComponent,
+  AboutComponent,
+  profileComponent,
+  MakePaymentComponent,
+  InvoiceComponent,
+  DataFilterPipe,
+  TroubleticketsComponent,
+  ControlMessagesComponent,
+  ContactComponent,
+  PaymenthistoryComponent,
+  HomeComponent,
+  BillingComponent,
+  ViewticketComponent,
+  LoginComponent,
+  SideBarTopComponent,SideBarLeftComponent,
+  DashboardTop,DashboardLeft,
+  ContactLeftComponent,ContactTopComponent,
+  BillingTopComponent,BillingLeftComponent
 
   ],
   bootstrap: [ AppComponent ]

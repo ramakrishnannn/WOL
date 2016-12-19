@@ -1,0 +1,46 @@
+<nav  class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+       <img class="navbar-brand"  src="../img/windstream-logo.png" style="height: 50px;padding: 5px;">
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li routerLink="/profile" routerLinkActive="active1"><a><i class="fa fa-id-card-o" aria-hidden="true"></i> &nbsp;My Profile</a></li>
+        <li routerLink="/about" routerLinkActive="active1"><a ><i class="fa fa-address-card" aria-hidden="true"></i> &nbsp;  About us</a></li>
+        <li routerLink="/contact" routerLinkActive="active1"><a ><i class="fa fa-phone-square" aria-hidden="true"></i> &nbsp; Contact us</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">MY ACCOUNT<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Make Payment</a></li>
+             <li role="separator" class="divider"></li>
+            <li><a href="#">Biling</a></li>
+             <li role="separator" class="divider"></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Create Trouble Ticket</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">View Invoice Details</a></li>
+             <li role="separator" class="divider"></li>
+            <li><a href="#">Payment History</a></li>
+          </ul>
+        </li>
+  
+         <li><a href="#"><i class="fa fa-sign-out hidden-xs" aria-hidden="true"></i><span class="visible-xs">LogOut</span></a></li>
+        <li class="dropdown" (click)="clicked()">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-gear fa-lg faa-spin animated"></i></a>
+   
+        </li>
+
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>

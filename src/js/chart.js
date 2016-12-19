@@ -1,6 +1,7 @@
 var chart = AmCharts.makeChart("chartdiv", {
     "theme": "light",
     "type": "serial",
+ 
     "dataProvider": [{
         "country": "Jan",
         "year2005": 420
@@ -73,7 +74,10 @@ var chart = AmCharts.makeChart("chartdiv", {
     },
     "export": {
         "enabled": true
-     }
+     },
+         "responsive": {
+    "enabled": true
+  },
 });
 jQuery('.chart-input').off().on('input change',function() {
     var property    = jQuery(this).data('property');

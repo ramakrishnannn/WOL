@@ -1,15 +1,15 @@
 import { Component, Input } from '@angular/core';
-
+import {CookieService} from 'angular2-cookie/core';
 
 @Component({
-  selector: 'my-hero-detail',
-    templateUrl: '../html/contact.html',
-    styleUrls: ['../css/dashboard.css']
+  selector: 'contact-bar-left',
+    templateUrl: 'contact-left.html',
+    styleUrls: ['contact-left.css']
   
 })
 
-export class ContactComponent {
-  
+export class ContactLeftComponent {
+  s
 }
 
 
