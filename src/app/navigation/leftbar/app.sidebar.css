@@ -215,6 +215,7 @@ top: 25%;
 }
 .active1{
     border-bottom: 5px solid orange;
+    background-color: orange;
   transition-duration: .5s;
 }
 #makepayment{
@@ -392,39 +393,7 @@ position: absolute;
  }
 }
 
-@media screen and (max-width: 1024px){
 
-
-}
-
-@media screen and (max-width: 768px){
-
-
-
-}
-
-@media screen and (max-width: 640px){
-
-
-}
-
-@media screen and (max-width: 480px){
-
-
-
-
-}
-
-@media screen and (max-width: 360px){
-
-
-}
-
-@media screen and (max-width: 310px){
-
-  
-
-}
 
 
 /*

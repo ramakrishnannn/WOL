@@ -6,13 +6,10 @@ import { AppComponent }  from './script/app.component';
 import { NavBarComponent } from './script/nav-bar.component';
 
 import { DashboardComponent } from './script/dashboard.component';
-import { AboutComponent } from './script/about';
-import { profileComponent } from './script/profile';
-import { MakePaymentComponent } from './script/app.makepayment.component';
 
-import { CheckComponent } from './script/check';
-import { CardComponent } from './script/card';
-import { QuickpayComponent } from './script/quickpay';
+
+
+
 /**/
 import { HttpModule } from "@angular/http";
 import { DataTableModule } from "angular2-datatable";
@@ -20,8 +17,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DataFilterPipe }   from './script/data-filter.pipe';
 
 import { InvoiceComponent } from './script/invoice.component';
-import { TroubleticketsComponent } from './script/troubletickets.component';
-import { ControlMessagesComponent } from './script/control-messages.component';
+
+
 import { PaymenthistoryComponent } from './script/paymenthistory.component';
 import { HomeComponent } from './script/home.component';
 import { BillingComponent } from './billing/billing.component';
@@ -31,6 +28,14 @@ import { LoginComponent } from './login/login.component';
 import { SideBarTopComponent } from './navigation/topbar/sidebartop';
 import { SideBarLeftComponent } from './navigation/leftbar/sidebar.component';
 import { ContactComponent } from './contactus/contact';
+import { profileComponent } from './profile/profile';
+import { AboutComponent } from './about/about';
+import { TroubleticketsComponent } from './createticket/troubletickets.component';
+import { ControlMessagesComponent } from './createticket/control-messages.component';
+import { MakePaymentComponent } from './payment/app.makepayment.component';
+import { CheckComponent } from './payment/check';
+import { CardComponent } from './payment/card';
+import { QuickpayComponent } from './payment/quickpay';
 import { DashboardTop } from './dashboard/top/dashboard-top';
 import { DashboardLeft } from './dashboard/left/dashboard-left';
 import { ContactLeftComponent } from './contactus/left/contact-left';
@@ -38,6 +43,17 @@ import { ContactTopComponent } from './contactus/top/contact-top';
 
 import { BillingTopComponent } from './billing/top/billing-top';
 import { BillingLeftComponent } from './billing/left/billing-left';
+
+
+import { PaymentLeftComponent } from './payment/left/payment-left';
+import { PaymentTopComponent } from './payment/top/payment-top';
+
+import { ProfileLeftComponent } from './profile/left/profile-left';
+import { ProfileTopComponent } from './profile/top/profile-top';
+
+import { AboutLeftComponent } from './about/left/about-left';
+import { AboutTopComponent } from './about/top/about-top';
+
 
 /**/
 @NgModule({
@@ -90,7 +106,10 @@ import { BillingLeftComponent } from './billing/left/billing-left';
   SideBarTopComponent,SideBarLeftComponent,
   DashboardTop,DashboardLeft,
   ContactLeftComponent,ContactTopComponent,
-  BillingTopComponent,BillingLeftComponent
+  BillingTopComponent,BillingLeftComponent,
+  PaymentTopComponent,PaymentLeftComponent,
+  ProfileLeftComponent,ProfileTopComponent,
+  AboutLeftComponent,AboutTopComponent
 
   ],
   bootstrap: [ AppComponent ]
