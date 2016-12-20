@@ -73,7 +73,7 @@
             </div>
             <div class='form-row'>
               <div class='col-md-12 form-group'>
-                <button (click)="isquickpay = !isquickpay;isquickpay2 = !isquickpay2;" class='form-control btn btn-success submit-button' type='submit'>Next »</button>
+                <button (click)="isquickpay = !isquickpay;isquickpay2 = !isquickpay2;getPaymentDetails();" class='form-control btn btn-success submit-button' type='submit'>Next »</button>
               </div>
             </div>
             <div class='form-row'>
@@ -114,22 +114,32 @@
           </div>
 
      
-          <table>
+           <table>
               <tr><td>Bill Date :</td><td>+(804)-325-5379 </td></tr>
-        <tr><td>Previous Balance : </td><td>$32.46</td></tr>
-        <tr><td>Payment & Adjustment : </td><td>$10.00</td></tr>
-        <tr><td>Past Due : </td><td>$20.00</td></tr>
-        <tr><td>Total Charges : </td><td>$55.46</td></tr>
-         <tr><td>Total Charges : </td><td>$55.46</td></tr>
+        <tr><td>Previous Amount : </td><td><span *ngFor="let b of invoiceData">${{b.previousAmount}}</span></td></tr>
+        <tr><td>Payment & Adjustment : </td><td><span *ngFor="let b of invoiceData">-${{b.adjustment}}</span></td></tr>
+        <tr><td>Past Due : </td><td><span *ngFor="let b of invoiceData">${{b.pastDue}}</span></td></tr>
+        <tr><td>Current Charge : </td><td><span *ngFor="let b of invoiceData">${{b.currentCharge}}</span></td></tr>
+         <tr><td>Total Amount : </td><td><span *ngFor="let b of invoiceData">${{b.amount}}</span></td></tr>
           </table>
           <hr>
-          <p style="color: red">Total Ammount :$57.92</p>
+         <form name="form" #f="ngForm" novalidate>
+          <table>
+              <tr><td>Pay amount :</td>&nbsp;&nbsp;<td *ngFor="let b of invoiceData">  
+          
+              <input type="hidden" name="id" id="id" ng-model="model.id" value="11" init-model="model.id=11" />
+              
+              <input type="text" class="form-control" name="payamount"  [(ngModel)]="model.payamount" #payamount="ngModel" value="{{b.amount}}"  placeholder="{{b.amount}}.00" />
+              </td></tr>
+           </table>   
+         
 
                <div class='form-row'>
               <div class='col-md-12 form-group'>
-                <button (click)="isquickpay3 = !isquickpay3;isquickpay2 = !isquickpay2;" class='form-control btn btn-success submit-button' type='submit'>Pay »</button>
+                <button (click)="isquickpay3 = !isquickpay3;isquickpay2 = !isquickpay2;paybill()" class='form-control btn btn-success submit-button' type='submit'>Pay Â»</button>
               </div>
             </div>
+            </form>
     </div>
   </div>
   </div>

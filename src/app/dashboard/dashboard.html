@@ -32,15 +32,18 @@
 								</tr>
 							</table>
 						</div>
-						<div class="widget-detail-1">
-							<span><a>
-									<button type="button" class="btn btn-success" data-toggle="modal" data-target=".bs-example-modal-lg" routerLink="/payment" routerLinkActive="active1">Pay My Bill >></button>
-							</a>
-                            </span>
-                          <span style=" float: right;">  <a href="/payment"><button class="btn btn-success">View Bill >></button></a>
-                          </span>
-						</div>
-
+						<div class="widget-detail-1" *ngFor="let b of invoiceDueData">
+				        <span *ngIf="b.paidAmount < 1">
+				          <a>
+				          <button type="button" class="btn btn-success" data-toggle="modal" data-target=".bs-example-modal-lg" routerLink="/payment" routerLinkActive="active1">Pay My Bill >></button>
+				          </a>
+				        </span>
+				         <span *ngIf="b.paidAmount > 1">
+				          Paid Amount : ${{b.paidAmount}} <br/>
+				          Paid Date : {{b.paidDate}}
+				        </span>
+				        <span style=" float: right;">  <a href="/billing"><button class="btn btn-success">View Bill >></button></a></span>
+				      </div>
 					</div>
 				</div>
 

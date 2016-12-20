@@ -1,10 +1,12 @@
 import {Component , OnInit} from "@angular/core";
 import {Http} from "@angular/http";
+import {CookieService} from 'angular2-cookie/core';
 
 @Component({
-  selector: 'app-viewticket',
-  templateUrl: '../html/viewticket.component.html',
-  styleUrls: ['../css/viewticket.component.css']
+    selector: 'app-viewticket',
+    templateUrl: 'viewticket.component.html',
+    styleUrls: ['viewticket.component.css']
+
 })
 export class ViewticketComponent implements OnInit {
  	
@@ -14,7 +16,7 @@ export class ViewticketComponent implements OnInit {
     public sortBy = "name";
     public sortOrder = "desc";
 
-    constructor(private http: Http) {
+   constructor(private http: Http,private _cookieService:CookieService) {
     }
 
     ngOnInit(): void {
@@ -24,7 +26,18 @@ export class ViewticketComponent implements OnInit {
                     this.data = data.json();
                 }, 1000);
             });
+
+             this.setcookie();
     }
+
+    top: boolean = false;
+   setcookie(){
+   
+   if(this._cookieService.get('menu') == 'top'){
+     this.top = true;
+   }
+
+ };
 
     public toInt(num: string) {
         return +num;

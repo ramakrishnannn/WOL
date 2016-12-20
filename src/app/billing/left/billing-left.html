@@ -1,14 +1,21 @@
 <div class="pagecontentbar col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2" style="">
 
 <div class="col-md-offset-8 col-lg-4" style="padding-bottom: 10px;">
-<div class="input-group date" id='date' style="cursor: pointer;">
-<input type='text' class="form-control" #myInput [ngModel]="dateval" (ngModelChange)="dateval=$event.target.value"
-(change)="getBillingDetails($event.target.value)"
-   (keyup)="getBillingDetails($event.target.value)" (mouseover)="getBillingDetails($event.target.value)">
-      <span class="input-group-addon">
-      <span class="fa fa-calendar"></span>
+<div class="input-group date" id='date' style="cursor: pointer;width: 280px;">
+
+<input type="text" class="form-control" name="monthvalue"  [(ngModel)]="model.monthvalue" #monthvalue="ngModel"  (ngModelChange)="model.monthvalue = $event.target.value"  ng-reflect-model="$event.target.value"
+   (onclick)="getBillingDetails($event.target.value)" (mouseover)="getBillingDetails($event.target.value)" (change)="getBillingDetails($event.target.value)"
+   (onblur)="getBillingDetails($event.target.value)" (keydown)="getBillingDetails($event.target.value)"/>
+       <span class="input-group-addon" style="display:none">
+      <!-- <span class="fa fa-calendar"></span> --> 
    </span>
-</div> 
+   
+   <!-- 
+   <button (click)=getBillingDetails();    class="form-control btn-default" style="margin-left: 30px;color:#fff;background-color: #5cb85c;border-color: #4cae4c;user-select: none;background-image: none;border-radius: 4px;">
+    Search
+   </button>
+    -->
+</div>
 </div>
 <div class="col-lg-8">
  <div class="panel">

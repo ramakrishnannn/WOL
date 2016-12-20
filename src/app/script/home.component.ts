@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {Http} from "@angular/http";
 import { Routes, RouterModule } from '@angular/router';
 import { Router } from '@angular/router';
 import {CookieService} from 'angular2-cookie/core';
@@ -26,7 +25,7 @@ issubmenu:false;
   
 }
 
-    constructor(private http: Http,private router: Router,private _cookieService:CookieService) {
+    constructor(private router: Router,private _cookieService:CookieService) {
     }
 
  top: boolean = false;
@@ -40,37 +39,7 @@ issubmenu:false;
 
 
 ngOnInit() {
- this.getAllTickets();
-this.getInvoiceData();
-this.getInvoiceDueAmount();
 this.setcookie();
 }
-  getAllTickets() {
-    this.http.get('http://192.168.26.60:8080/tickets/lasttwo')
-      .subscribe(
-        data => { this.ticketData = data.json()},
-        err => console.error(err),
-        () => console.log('done')
-      );
-  }
-
-
-  getInvoiceData() {
-    this.http.get('http://192.168.26.60:8080/invoice/last2Month')
-      .subscribe(
-        data => { this.invoiceData = data.json()},
-        err => console.error(err),
-        () => console.log('done')
-      );
-  }
-
-  getInvoiceDueAmount(){
-    this.http.get('http://192.168.26.60:8080/invoice/currectinvoice')
-      .subscribe(
-        data => { this.invoiceDueData = data.json()},
-        err => console.error(err),
-        () => console.log('done')
-      );
-  }
 
 }

@@ -22,7 +22,7 @@ import { InvoiceComponent } from './invoice/invoice.component';
 import { PaymenthistoryComponent } from './paymenthistory/paymenthistory.component';
 import { HomeComponent } from './script/home.component';
 import { BillingComponent } from './billing/billing.component';
-import { ViewticketComponent } from './script/viewticket.component';
+import { ViewticketComponent } from './viewticket/viewticket.component';
 import { LoginComponent } from './login/login.component';
 /*-------------------------------final-----------------------------------------*/
 import { SideBarTopComponent } from './navigation/topbar/sidebartop';

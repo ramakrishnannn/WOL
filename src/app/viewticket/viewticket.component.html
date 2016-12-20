@@ -1,0 +1,116 @@
+<div *ngIf="!top" class="container-fluid" style="padding: 0px !important">
+  <side-bar></side-bar>
+  <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2"  style="padding: 0px !important">
+
+  <div class="panel panel-default">
+  <div class="panel-heading" style="border-radius: 0px;">View Tickets</div>
+  <div class="panel-body">
+        <div  style="text-align: right !important;">
+                
+                <select class="col-xs-2,form-control input-sm" [(ngModel)]="rowsOnPage" >
+                    <option [ngValue]="5">5</option>
+                    <option [ngValue]="10">10</option>
+                    <option [ngValue]="15">15</option>
+                </select>
+            </div>
+                 <table class="table table-striped" [mfData]="data | dataFilter : filterQuery" #mf="mfDataTable"
+                   [mfRowsOnPage]="rowsOnPage" [(mfSortBy)]="sortBy" [(mfSortOrder)]="sortOrder">
+                <thead>
+                <tr>
+                    <th style="width: 20%">
+                        <mfDefaultSorter by="name">Name</mfDefaultSorter>
+                    </th>
+                    <th style="width: 20%">
+                        <mfDefaultSorter by="description">Description</mfDefaultSorter>
+                    </th>
+                    <th style="width: 20%">
+                        <mfDefaultSorter by="status">Status</mfDefaultSorter>
+                    </th>
+                </tr>
+                <tr>
+                    <!-- <th colspan="5">
+                        Filter by name:
+                        <input class="form-control" [(ngModel)]="filterQuery"/>
+                    </th> -->
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let item of mf.data" >
+                   
+                    <td>{{item.name}}</td>
+                    <td>{{item.desc}}</td>
+                    <td>
+                    OPEN
+                    
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td colspan="5">
+                        <mfBootstrapPaginator [rowsOnPageSet]=""></mfBootstrapPaginator>
+                    </td>
+                </tr>
+                </tfoot>
+            </table>
+  </div>
+</div>
+</div>
+</div>
+<div *ngIf="top">
+<side-bar-top></side-bar-top>
+ <div class=""  style="padding: 0px !important">
+
+  <div class="panel panel-default">
+  <div class="panel-heading" style="border-radius: 0px;">View Invoice</div>
+  <div class="panel-body">
+        <div  style="text-align: right !important;">
+                
+                <select class="col-xs-2,form-control input-sm" [(ngModel)]="rowsOnPage" >
+                    <option [ngValue]="5">5</option>
+                    <option [ngValue]="10">10</option>
+                    <option [ngValue]="15">15</option>
+                </select>
+            </div>
+                 <table class="table table-striped" [mfData]="data | dataFilter : filterQuery" #mf="mfDataTable"
+                   [mfRowsOnPage]="rowsOnPage" [(mfSortBy)]="sortBy" [(mfSortOrder)]="sortOrder">
+                <thead>
+                <tr>
+                    <th style="width: 20%">
+                        <mfDefaultSorter by="name">Name</mfDefaultSorter>
+                    </th>
+                    <th style="width: 20%">
+                        <mfDefaultSorter by="description">Description</mfDefaultSorter>
+                    </th>
+                    <th style="width: 20%">
+                        <mfDefaultSorter by="status">Status</mfDefaultSorter>
+                    </th>
+                </tr>
+                <tr>
+                    <!-- <th colspan="5">
+                        Filter by name:
+                        <input class="form-control" [(ngModel)]="filterQuery"/>
+                    </th> -->
+                </tr>
+                </thead>
+               <tbody>
+                <tr *ngFor="let item of mf.data" >
+                   
+                    <td>{{item.name}}</td>
+                    <td>{{item.desc}}</td>
+                    <td>
+                    OPEN
+                    
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td colspan="5">
+                        <mfBootstrapPaginator [rowsOnPageSet]=""></mfBootstrapPaginator>
+                    </td>
+                </tr>
+                </tfoot>
+            </table>
+  </div>
+</div>
+</div>
+</div>

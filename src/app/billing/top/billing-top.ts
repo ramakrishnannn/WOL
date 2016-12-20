@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {Http} from "@angular/http";
+import {Router, ActivatedRoute} from '@angular/router';
+
 
 @Component({
   selector: 'billing-top',
@@ -8,13 +10,20 @@ import {Http} from "@angular/http";
 })
 export class BillingTopComponent {
 
- dateval: string;
-public invoiceData;
+  public invoiceData;
+  model: any = {};
+	dateval:string
+    param: string;
 
-  constructor(private http: Http) {
+    constructor(private route: ActivatedRoute,private http: Http,private router:Router) {
+        
     }
-     
-	getBillingDetails(monthVal){
+  
+
+
+
+
+ getBillingDetails(monthVal){
 
 	if (monthVal.length > 5) {
 
@@ -34,5 +43,5 @@ public invoiceData;
       );
 	}
 
-   }
+ }
 }

@@ -22,12 +22,6 @@ export class DashboardComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.http.get("http://192.168.26.60:8080/tickets/all")
-            .subscribe((data)=> {
-                setTimeout(()=> {
-                    this.data = data.json();
-                }, 1000);
-            });
     }
 
 
