@@ -15,13 +15,24 @@ export class BillingTopComponent {
 	dateval:string
     param: string;
 
-    constructor(private route: ActivatedRoute,private http: Http,private router:Router) {
-        
+
+    constructor(private http: Http) {
+    this.getCurrentMonthBilling();
     }
+     
   
 
 
-
+getCurrentMonthBilling(){ 
+this.http.get('http://localhost:8080/invoice/currectinvoice')
+      .subscribe(
+        data => { this.invoiceData = data.json()
+          this.model.monthvalue=this.invoiceData[0].month+"-"+this.invoiceData[0].year;
+        },
+        err => console.error(err),
+        () => console.log('done')
+      );
+}
 
  getBillingDetails(monthVal){
 
