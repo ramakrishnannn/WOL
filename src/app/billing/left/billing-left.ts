@@ -17,7 +17,6 @@ public invoiceData;
     }
 
 
-
 getCurrentMonthBilling(){
 this.http.get('http://localhost:8080/invoice/currectinvoice')
       .subscribe(

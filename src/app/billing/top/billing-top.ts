@@ -19,7 +19,6 @@ export class BillingTopComponent {
     constructor(private http: Http) {
     this.getCurrentMonthBilling();
     }
-     
   
 
 
