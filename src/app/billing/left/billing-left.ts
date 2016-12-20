@@ -11,10 +11,23 @@ export class BillingLeftComponent {
  dateval: string;
 public invoiceData;
  model: any = {};
- 
-  constructor(private http: Http) {
+
+   constructor(private http: Http) {
+    this.getCurrentMonthBilling();
     }
-     
+
+
+getCurrentMonthBilling(){
+this.http.get('http://localhost:8080/invoice/currectinvoice')
+      .subscribe(
+        data => { this.invoiceData = data.json()
+            this.model.monthvalue=this.invoiceData[0].month+"-"+this.invoiceData[0].year;
+        },
+        err => console.error(err),
+        () => console.log('done')
+      );
+}
+  
 	 getBillingDetails(monthVal){
 
 
