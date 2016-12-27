@@ -2,7 +2,7 @@
 <div class="col-md-offset-8 col-lg-4" style="padding-bottom: 10px;">
 
 <div class="input-group date" id='date' style="cursor: pointer;width: 280px;">
- 
+ <form name="form"  #f="ngForm" novalidate>
 <input type="text" class="form-control" name="monthvalue"  [(ngModel)]="model.monthvalue" #monthvalue="ngModel"  (ngModelChange)="model.monthvalue = $event.target.value"  ng-reflect-model="$event.target.value"
    (onclick)="getBillingDetails($event.target.value)" (mouseover)="getBillingDetails($event.target.value)" (change)="getBillingDetails($event.target.value)"
    (onblur)="getBillingDetails($event.target.value)" (keydown)="getBillingDetails($event.target.value)"/>
@@ -15,7 +15,8 @@
     Search
    </button>
     -->
-</div> 
+  </form>
+</div>
 
 </div>
 <div class="col-lg-8">
