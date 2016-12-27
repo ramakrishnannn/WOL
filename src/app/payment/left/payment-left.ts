@@ -27,9 +27,9 @@ export class PaymentLeftComponent {
 
   getPaymentDetails(){
 
-  	 this.http.get('http://192.168.26.60:8080/invoice/currectinvoice')
+  	 this.http.get('http://localhost:8080/invoice/currectinvoice')
       .subscribe(
-        data => { this.invoiceData = data.json()  
+        data => { this.invoiceData = data.json()
         this.model.id=this.invoiceData[0].id;
         this.model.payamount=this.invoiceData[0].amount;
         },
@@ -37,18 +37,18 @@ export class PaymentLeftComponent {
         () => console.log('done')
       );
 
-      
+
 
   }
 
   paybill(){
-     var obj = { 
+     var obj = {
             billId: this.model.id+"",
             paidAmount: this.model.payamount+"",
-        }; 
+        };
 	    var jsonString= JSON.stringify(obj);
 
-       this.http.post('http://192.168.26.60:8080/invoice/update',jsonString)
+       this.http.post('http://localhost:8080/invoice/update',jsonString)
       .subscribe(
         data => { this.invoiceData = data.json()},
         err => console.error(err),

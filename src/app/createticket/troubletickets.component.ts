@@ -15,15 +15,15 @@ import {CookieService} from 'angular2-cookie/core';
 })
 export class TroubleticketsComponent {
   userForm: any;
-  
+
   ngOnInit() {
 this.setcookie();
 }
   private troubleticketsService: TroubleticketsService;
-  
+
   constructor(private _cookieService:CookieService,private formBuilder: FormBuilder,protected http: Http,private router: Router) {
-    
-      
+
+
     this.userForm = this.formBuilder.group({
       'name': ['', Validators.required],
       'email': ['', [Validators.required, ValidationService.emailValidator]],
@@ -35,7 +35,7 @@ this.setcookie();
 
  top: boolean = false;
    setcookie(){
-   
+
    if(this._cookieService.get('menu') == 'top'){
      this.top = true;
    }
@@ -57,7 +57,7 @@ submitForm(myForm) {
 
 
   addTickets(formData){
-    this.http.post('http://192.168.26.60:8080/tickets/create',formData)
+    this.http.post('http://localhost:8080/tickets/create',formData)
         .map(res => res.json())
         .subscribe(
           (data) => {
@@ -82,13 +82,13 @@ submitForm(myForm) {
       console.log(errors);
       for (var field in errors) {
         var fieldErrors: string[] = (<any>errors)[field];
-        
+
       }
     }
 
     console.log(response);
   }
-  
+
   saveUser() {
 
     console.log(this.userForm);
@@ -101,13 +101,13 @@ submitForm(myForm) {
 
   alert(this.userForm.value);
 
- 
+
   alert(this.userForm);
 
    var result,
         userValue = this.userForm.value;
 
     alert(userValue);
- 
+
   }
 }

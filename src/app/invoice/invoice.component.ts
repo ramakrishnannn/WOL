@@ -18,7 +18,7 @@ export class InvoiceComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.http.get("http://192.168.26.60:8080/invoice/all")
+        this.http.get("http://localhost:8080/invoice/all")
             .subscribe((data)=> {
                 setTimeout(()=> {
                     this.data = data.json();
@@ -29,7 +29,7 @@ export class InvoiceComponent implements OnInit {
     }
 top: boolean = false;
    setcookie(){
-   
+
    if(this._cookieService.get('menu') == 'top'){
      this.top = true;
    }
@@ -46,6 +46,6 @@ top: boolean = false;
      public getMonthVal = (a: any) => {
         return new Date(a.month+'-1-01').getMonth()+1;
     }
-  
-    
+
+
 }

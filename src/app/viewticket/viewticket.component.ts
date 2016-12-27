@@ -9,7 +9,7 @@ import {CookieService} from 'angular2-cookie/core';
 
 })
 export class ViewticketComponent implements OnInit {
- 	
+
  	public data;
     public filterQuery = "";
     public rowsOnPage = 5;
@@ -20,7 +20,7 @@ export class ViewticketComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.http.get("http://192.168.26.60:8080/tickets/all")
+        this.http.get("http://localhost:8080/tickets/all")
             .subscribe((data)=> {
                 setTimeout(()=> {
                     this.data = data.json();
@@ -32,7 +32,7 @@ export class ViewticketComponent implements OnInit {
 
     top: boolean = false;
    setcookie(){
-   
+
    if(this._cookieService.get('menu') == 'top'){
      this.top = true;
    }
@@ -47,6 +47,6 @@ export class ViewticketComponent implements OnInit {
         return a.name.length;
     }
 
-    
+
 
 }
