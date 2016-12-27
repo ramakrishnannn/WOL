@@ -12,7 +12,7 @@ export class ViewticketComponent implements OnInit {
 
  	public data;
     public filterQuery = "";
-    public rowsOnPage = 5;
+    public rowsOnPage = 10;
     public sortBy = "name";
     public sortOrder = "desc";
 

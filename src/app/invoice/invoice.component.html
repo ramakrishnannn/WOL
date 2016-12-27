@@ -18,32 +18,35 @@
                 <thead>
                 <tr>
                     <th style="width: 20%">
-                        <mfDefaultSorter [by]="getMonthVal">Month</mfDefaultSorter>
+                        <mfDefaultSorter [by]="getMonthVal">Invoice Month</mfDefaultSorter>
                     </th>
                     <th style="width: 20%">
-                        <mfDefaultSorter by="year">Year</mfDefaultSorter>
+                        <mfDefaultSorter by="year">Amount</mfDefaultSorter>
                     </th>
                     <th style="width: 20%">
-                        <mfDefaultSorter by="amount">Amount</mfDefaultSorter>
+                        <mfDefaultSorter by="amount">Paid Amount</mfDefaultSorter>
                     </th>
                     <th style="width: 20%">
-                        <mfDefaultSorter by="paidAmount">Paid Amount</mfDefaultSorter>
+                          <mfDefaultSorter by="paidAmount">Paid Date</mfDefaultSorter>
                     </th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr *ngFor="let item of mf.data" >
                    
-                    <td>{{item.month}}</td>
-                    <td>{{item.year}}</td>
+                    <td>{{item.month}}-{{item.year}}</td>
                     <td>{{item.amount}}</td>
                     <td>{{item.paidAmount}}</td>
+                    <td>{{item.paidDate}}</td>
                 </tr>
                 </tbody>
                 <tfoot>
                 <tr>
                     <td colspan="5">
                         <mfBootstrapPaginator [rowsOnPageSet]=""></mfBootstrapPaginator>
+                        <span style="display: flex;justify-content: center">
+          <button type="button" class="btn btn-success" data-toggle="modal" data-target=".bs-example-modal-lg" routerLink="/billing" routerLinkActive="active1">View Usage Details</button>
+          </span>
                     </td>
                 </tr>
                 </tfoot>
@@ -72,32 +75,35 @@
                 <thead>
                 <tr>
                     <th style="width: 20%">
-                        <mfDefaultSorter [by]="getMonthVal">Month</mfDefaultSorter>
+                        <mfDefaultSorter [by]="getMonthVal">Invoice Month</mfDefaultSorter>
+                    </th>
+                     <th style="width: 20%">
+                        <mfDefaultSorter by="year">Amount</mfDefaultSorter>
                     </th>
                     <th style="width: 20%">
-                        <mfDefaultSorter by="year">Year</mfDefaultSorter>
+                        <mfDefaultSorter by="amount">Paid Amount</mfDefaultSorter>
                     </th>
                     <th style="width: 20%">
-                        <mfDefaultSorter by="amount">Amount</mfDefaultSorter>
-                    </th>
-                    <th style="width: 20%">
-                        <mfDefaultSorter by="paidAmount">Paid Amount</mfDefaultSorter>
+                          <mfDefaultSorter by="paidAmount">Paid Date</mfDefaultSorter>
                     </th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr *ngFor="let item of mf.data" >
                    
-                    <td>{{item.month}}</td>
-                    <td>{{item.year}}</td>
+                    <td>{{item.month}}-{{item.year}}</td>
                     <td>{{item.amount}}</td>
                     <td>{{item.paidAmount}}</td>
+                    <td>{{item.paidDate}}</td>
                 </tr>
                 </tbody>
                 <tfoot>
                 <tr>
                     <td colspan="5">
                         <mfBootstrapPaginator [rowsOnPageSet]=""></mfBootstrapPaginator>
+                        <span style="display: flex;justify-content: center">
+          <button type="button" class="btn btn-success" data-toggle="modal" data-target=".bs-example-modal-lg" routerLink="/billing" routerLinkActive="active1">View Usage Details</button>
+          </span>
                     </td>
                 </tr>
                 </tfoot>

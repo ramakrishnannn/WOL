@@ -10,7 +10,7 @@ export class InvoiceComponent implements OnInit {
 
     public data;
     public filterQuery = "";
-    public rowsOnPage = 5;
+    public rowsOnPage = 10;
     public sortBy = "getMonthVal(month)";
     public sortOrder = "desc";
 
@@ -44,7 +44,7 @@ top: boolean = false;
     }
 
      public getMonthVal = (a: any) => {
-        return new Date(a.month+'-1-01').getMonth()+1;
+        return new Date(a.month+'-1-'+a.year).getMonth()+1;
     }
 
 

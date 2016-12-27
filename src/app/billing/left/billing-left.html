@@ -3,15 +3,9 @@
   <div class="" style="padding: 10px;">
     <div class="input-group date" id='date' style="cursor: pointer;float: right">
 
-      <input type="text" class="form-control" name="monthvalue"
-             [(ngModel)]="model.monthvalue" #monthvalue="ngModel"
-             (ngModelChange)="model.monthvalue = $event.target.value"
-             ng-reflect-model="$event.target.value"
-             (onclick)="getBillingDetails($event.target.value)"
-             (mouseover)="getBillingDetails($event.target.value)"
-             (change)="getBillingDetails($event.target.value)"
-             (onblur)="getBillingDetails($event.target.value)"
-             (keydown)="getBillingDetails($event.target.value)"/>
+      <input type="text" class="form-control" name="monthvalue" id='dtp' [(ngModel)]="model.monthvalue" #monthvalue="ngModel"  (ngModelChange)="model.monthvalue = $event.target.value"  ng-reflect-model="$event.target.value" (focus)="getBillingDetails($event.target.value)"
+   (onblur)="getBillingDetails($event.target.value)"/>
+
       <span class="input-group-addon" style="display:none">
       <!-- <span class="fa fa-calendar"></span> -->
    </span>
@@ -33,31 +27,37 @@
         <div class="table-responsive">
 <table class="table">
   <tr>
-    <td>Bill Date :</td>
-    <td>Previous Amount :</td>
+    <td>Bill Date : <span *ngFor="let b of invoiceData">{{b.month}}-{{b.year}}</span></td>
+    <td>Previous Amount : <span *ngFor="let b of invoiceData">${{b.previousAmount}}</span></td>
   </tr>
     <tr>
     <td>Account Number : 160317624</td>
-    <td>Payment & Adjustment :</td>
+    <td>Payment & Adjustment : <span *ngFor="let b of invoiceData">-${{b.adjustment}}</span></td>
   </tr>
     <tr>
     <td>Customer Name : Marcus Doe</td>
-    <td>Past Due :</td>
+    <td>Past Due : <span *ngFor="let b of invoiceData">${{b.pastDue}}</span></td>
   </tr>
     <tr>
     <td>Billing Number : 804-325-5379</td>
-    <td>Current Charge :</td>
+    <td>Current Charge : <span *ngFor="let b of invoiceData">${{b.currentCharge}}</span></td>
   </tr>
     <tr>
-    <td> Due Date :</td>
-    <td>Total Amount Due :</td>
+    <td> Due Date : <span *ngFor="let b of invoiceData">{{b.dueDate}}</span></td>
+    <td>Total Amount Due : <span *ngFor="let b of invoiceData">${{b.amount}}</span></td>
+  </tr>
+
+   <tr *ngFor="let b of invoiceData">
+    <td *ngIf="b.paidAmount > 0"> Payment Received : <span *ngFor="let b of invoiceData">${{b.paidAmount}}</span></td>
+    <td *ngIf="b.paidAmount > 0">Paid Date : <span *ngFor="let b of invoiceData">{{b.paidDate}}</span></td>
   </tr>
 </table>
-          <div class="widget-detail-1" style="text-align: center;" *ngFor="let b of invoiceData">
+          <div class="widget-detail-1"   style="text-align: center;padding: 10px;" *ngFor="let b of invoiceData">
+          <div *ngIf="b.paidAmount < 1"> 
             <button class="btn btn-success" data-toggle="modal" data-target=".bs-example-modal-lg"
                     routerLink="/payment" routerLinkActive="active1">
               Pay My Bill
-            </button>
+            </button></div>
           </div>
         </div>
       </div>
