@@ -20,8 +20,6 @@ export class BillingTopComponent {
     this.getCurrentMonthBilling();
     }
   
-
-
 getCurrentMonthBilling(){
 this.http.get('http://localhost:8080/invoice/currectinvoice')
       .subscribe(
@@ -34,6 +32,7 @@ this.http.get('http://localhost:8080/invoice/currectinvoice')
 }
 
  getBillingDetails(monthVal){
+
 
 	if (monthVal.length > 5) {
 
@@ -51,7 +50,10 @@ this.http.get('http://localhost:8080/invoice/currectinvoice')
         err => console.error(err),
         () => console.log(this.invoiceData)
       );
+
 	}
+
+  document.getElementById("dtp").blur;
 
  }
 }

@@ -21,10 +21,10 @@
                         <mfDefaultSorter by="name">Name</mfDefaultSorter>
                     </th>
                     <th style="width: 20%">
-                        <mfDefaultSorter by="description">Description</mfDefaultSorter>
+                        <mfDefaultSorter by="desc">Description</mfDefaultSorter>
                     </th>
                     <th style="width: 20%">
-                        <mfDefaultSorter by="status">Status</mfDefaultSorter>
+                        <mfDefaultSorter by="resolved">Status</mfDefaultSorter>
                     </th>
                 </tr>
                 <tr>
@@ -39,8 +39,10 @@
                    
                     <td>{{item.name}}</td>
                     <td>{{item.desc}}</td>
-                    <td>
-                    OPEN
+                   <td>
+                        <div *ngIf="item.resolved==true">CLOSED</div>
+                            <div *ngIf="item.resolved!=true">OPEN</div>
+                         </td>
                     
                 </tr>
                 </tbody>
@@ -61,7 +63,7 @@
  <div class=""  style="padding: 0px !important">
 
   <div class="panel panel-default">
-  <div class="panel-heading" style="border-radius: 0px;">View Invoice</div>
+  <div class="panel-heading" style="border-radius: 0px;">View Tickets</div>
   <div class="panel-body">
         <div  style="text-align: right !important;">
                 
@@ -79,10 +81,10 @@
                         <mfDefaultSorter by="name">Name</mfDefaultSorter>
                     </th>
                     <th style="width: 20%">
-                        <mfDefaultSorter by="description">Description</mfDefaultSorter>
+                        <mfDefaultSorter by="desc">Description</mfDefaultSorter>
                     </th>
                     <th style="width: 20%">
-                        <mfDefaultSorter by="status">Status</mfDefaultSorter>
+                        <mfDefaultSorter by="resolved">Status</mfDefaultSorter>
                     </th>
                 </tr>
                 <tr>
@@ -98,7 +100,9 @@
                     <td>{{item.name}}</td>
                     <td>{{item.desc}}</td>
                     <td>
-                    OPEN
+                        <div *ngIf="item.resolved==true">CLOSED</div>
+                         <div *ngIf="item.resolved!=true">OPEN</div>
+                     </td>
                     
                 </tr>
                 </tbody>

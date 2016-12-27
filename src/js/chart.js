@@ -1,48 +1,16 @@
+
+
+var jsonData = $.ajax({
+          url: "http://localhost:8080/invoice/billingDetails",
+          dataType: "json",
+          async: false
+          }).responseText;
+
 var chart = AmCharts.makeChart("chartdiv", {
     "theme": "light",
     "type": "serial",
  
-    "dataProvider": [{
-        "country": "Jan",
-        "year2005": 420
-    }, {
-        "country": "Feb",
-
-        "year2005": 301
-    }, {
-        "country": "March",
-    
-        "year2005": 290
-    }, {
-        "country": "April",
-  
-        "year2005": 230
-    }, {
-        "country": "May",
-
-        "year2005": 210
-    }, {
-        "country": "June",
-
-        "year2005": 409
-    }, {
-        "country": "July",
- 
-        "year2005": 720
-    }, {
-        "country": "Aug",
-  
-        "year2005": 710
-    }, {
-        "country": "Sep",
-      
-        "year2005": 101
-    },
-     {
-        "country": "Oct",
-       
-        "year2005": 101
-    }],
+    "dataProvider": JSON.parse(jsonData),
     "valueAxes": [{
         "stackType": "3d",
         "unit": "$",
@@ -63,12 +31,12 @@ var chart = AmCharts.makeChart("chartdiv", {
         "lineAlpha": 0.2,
         "title": "2005",
         "type": "column",
-        "valueField": "year2005"
+        "valueField": "currentCharge"
     }],
     "plotAreaFillAlphas": 0.1,
     "depth3D": 60,
     "angle": 30,
-    "categoryField": "country",
+    "categoryField": "month",
     "categoryAxis": {
         "gridPosition": "start"
     },
