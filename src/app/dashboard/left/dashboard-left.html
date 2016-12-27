@@ -137,7 +137,10 @@
             <tr *ngFor="let item of ticketData" >
 
               <td>{{item.name}}</td>
-              <td>OPEN</td>
+              <td>
+              <div *ngIf="item.resolved==true">CLOSED</div>
+              <div *ngIf="item.resolved!=true">OPEN</div>
+              </td>
             </tr>
           </tbody>
         </table>
