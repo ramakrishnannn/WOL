@@ -47,7 +47,8 @@
           </div>
 
 
-          <div class="widget-detail-1" *ngFor="let b of invoiceDueData">
+          <div class="widget-detail-1">
+          <span *ngFor="let b of invoiceDueData">
         <span *ngIf="b.paidAmount < 1">
           <a>
           <button type="button" class="btn btn-success greenBackGround" data-toggle="modal"
@@ -58,6 +59,7 @@
             <span *ngIf="b.paidAmount > 1">
           Paid Amount : ${{b.paidAmount}} <br/>
           Paid Date : {{b.paidDate}}
+        </span>
         </span>
             <span style=" float: right;">  <a href="/billing"><button class="btn btn-success greenBackGround">View Bill >></button></a></span>
           </div>
@@ -262,8 +264,7 @@
             </div>
             <div class="panel-body">
               <p style="min-height: 70px; padding-left: 13px;">
-                Choose from the following options or visit our
-                <a href="/" title="Support">Support Page</a>
+                Choose from the following options <br/>
                 If you’re in need further assistance.
               </p>
               <div

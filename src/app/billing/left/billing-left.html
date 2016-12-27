@@ -1,7 +1,7 @@
-<div class="pagecontentbar col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2" style="">
+<div class="col-xs-10 col-xs-offset-1 col-sm-7 col-sm-offset-4" style="">
 
-  <div class="col-md-offset-8 col-lg-4" style="padding-bottom: 10px;">
-    <div class="input-group date" id='date' style="cursor: pointer;width: 280px;float: right">
+  <div class="" style="padding: 10px;">
+    <div class="input-group date" id='date' style="cursor: pointer;float: right">
 
       <input type="text" class="form-control" name="monthvalue"
              [(ngModel)]="model.monthvalue" #monthvalue="ngModel"
@@ -23,57 +23,36 @@
        -->
     </div>
   </div>
-  <div class="row col-lg-10" style="margin: auto; float: none">
-    <!-------------------Account Details----------------------------------------------------------->
-    <div class="col-lg-8" style="margin: auto">
+  <div class="row" style="margin: auto; float: none;padding-top: 40px">
+    <!-------------------Account Details---------------------------------------------------------->
+    <div class="" style="margin: auto">
       <div class="panel">
         <div class="panel-heading">
           <h4 class="panel-title">Account Details</h4>
         </div>
-        <div class="panel-body panelbody">
-
-          <ul class="list-group">
-            <li class="list-group-item">
-            <span class="tag tag-default tag-pill float-xs-right" style="float: right;">Previous Amount :
-              <span *ngFor="let b of invoiceData">${{b.previousAmount}}</span>
-            </span>
-              Bill Date :
-              <span *ngFor="let b of invoiceData">{{b.month}}-{{b.year}}</span>
-            </li>
-            <li class="list-group-item">
-            <span class="tag tag-default tag-pill float-xs-right" style="float: right;">Payment & Adjustment :
-              <span *ngFor="let b of invoiceData">-${{b.adjustment}}</span>
-            </span>
-              Account Number : 160317624
-            </li>
-            <li class="list-group-item">
-            <span class="tag tag-default tag-pill float-xs-right" style="float: right;">Past Due :
-              <span *ngFor="let b of invoiceData">${{b.pastDue}}</span>
-            </span>
-              Customer Name : Marcus Doe
-            </li>
-            <li class="list-group-item">
-            <span class="tag tag-default tag-pill float-xs-right" style="float: right;">
-              Current Charge :
-              <span *ngFor="let b of invoiceData">${{b.currentCharge}}</span> </span>
-              Billing Number : 804-325-5379
-            </li>
-            <li class="list-group-item">
-                <span class="tag tag-default tag-pill float-xs-right" style="float: right;">Total Amount Due :
-                <span *ngFor="let b of invoiceData">${{b.amount-b.paidAmount}}</span>  </span>
-              Due Date : <span *ngFor="let b of invoiceData">{{b.dueDate}}</span>
-            </li>
-
-            <li class="list-group-item" *ngFor="let b of invoiceData">
-              <div *ngIf="b.paidAmount > 0">
-                        <span class="tag tag-default tag-pill float-xs-right" style="float: right;">Paid Date :{{b.paidDate}}
-                        </span>Payment Received : ${{b.paidAmount}}
-              </div>
-            </li>
-
-
-          </ul>
-
+        <div class="table-responsive">
+<table class="table">
+  <tr>
+    <td>Bill Date :</td>
+    <td>Previous Amount :</td>
+  </tr>
+    <tr>
+    <td>Account Number : 160317624</td>
+    <td>Payment & Adjustment :</td>
+  </tr>
+    <tr>
+    <td>Customer Name : Marcus Doe</td>
+    <td>Past Due :</td>
+  </tr>
+    <tr>
+    <td>Billing Number : 804-325-5379</td>
+    <td>Current Charge :</td>
+  </tr>
+    <tr>
+    <td> Due Date :</td>
+    <td>Total Amount Due :</td>
+  </tr>
+</table>
           <div class="widget-detail-1" style="text-align: center;" *ngFor="let b of invoiceData">
             <button class="btn btn-success" data-toggle="modal" data-target=".bs-example-modal-lg"
                     routerLink="/payment" routerLinkActive="active1">
@@ -85,7 +64,7 @@
     </div>
 
     <!----------------------------------------Bill Alerts---------------------------------------------------------------->
-    <div class="col-lg-4" style="margin: auto">
+    <div class="" style="margin: auto">
       <div class="panel">
         <div class="panel-heading">
           <h4 class="panel-title">Bill Alerts</h4>
@@ -103,8 +82,8 @@
     </div>
   </div>
 
-  <!------------------------------------------Usage--------------------------------------------------------------------->
-  <div class="col-lg-10" style="margin: auto; float: none">
+  <!------------------------------------------Usage-------------------------------------------------------------------->
+  <div class="" style="margin: auto; float: none">
     <div class="panel">
       <div class="panel-heading">
         <h3 class="panel-title">Usage Deatails</h3>
@@ -114,7 +93,7 @@
         <li><a href="#chartdiv" data-toggle="tab">Billing </a></li>
 
       </ul>
-      <div id="col-lg-12" class="tab-content">
+      <div id="" class="tab-content">
         <div class="tab-pane fade" id="chartdiv"></div>
         <div class="tab-pane active in hidden-xs" id="chartdatausage"></div>
         <div class="tab-pane active in hidden-lg" id="chartdatausage2"></div>

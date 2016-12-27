@@ -213,12 +213,13 @@ span.round-tab:hover {
 }
 @media( min-width : 768px ) {
     .connecting-line{
-        left:130px;
+        left: 126px;
+    width: 50%;
     }
 }
 @media( min-width : 850px ) {
     .connecting-line{
-        left:165px;
+        left:150px;
     }
 }
 @media( min-width : 981px ) {
@@ -234,7 +235,7 @@ span.round-tab:hover {
 }
 @media( min-width : 1200px ) {
     .connecting-line{
-        left:175px;
+        left:135px;
         width:50%;
     }
 }
