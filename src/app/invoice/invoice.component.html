@@ -1,10 +1,10 @@
 <div *ngIf="!top" class="container-fluid" style="padding: 0px !important">
   <side-bar></side-bar>
-  <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2"  style="padding: 0px !important">
+  <div class="col-xs-10 col-xs-offset-1 col-sm-7 col-sm-offset-4"  style="padding: 20px !important">
 
   <div class="panel panel-default">
   <div class="panel-heading" style="border-radius: 0px;">View Invoice</div>
-  <div class="panel-body">
+  <div class="panel-body table-responsive">
         <div  style="text-align: right !important;">
                 
                 <select class="col-xs-2,form-control input-sm" [(ngModel)]="rowsOnPage" >
@@ -54,11 +54,11 @@
 </div>
 <div *ngIf="top">
 <side-bar-top></side-bar-top>
- <div class=""  style="padding: 0px !important">
+ <div class="col-xs-10 col-xs-offset-1"  style="padding: 20px !important">
 
   <div class="panel panel-default">
   <div class="panel-heading" style="border-radius: 0px;">View Invoice</div>
-  <div class="panel-body">
+  <div class="panel-body table-responsive">
         <div  style="text-align: right !important;">
                 
                 <select class="col-xs-2,form-control input-sm" [(ngModel)]="rowsOnPage" >

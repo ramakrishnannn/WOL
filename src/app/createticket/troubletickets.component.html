@@ -1,12 +1,10 @@
 <div *ngIf="!top" class="container-fluid" style="padding: 0px !important">
   <side-bar></side-bar>
-<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2">
- <div _ngcontent-dkq-18="" class="panel-heading">
-                    <h3 _ngcontent-dkq-18="">Create Trouble Ticket</h3>
-                </div>
-                <div _ngcontent-dkq-18="" class="panel-body">
-          
-    <form [formGroup]="userForm" (submit)="submitForm(userForm)" class="form-horizontal">
+ <div class="col-xs-8 col-xs-offset-2  col-sm-7 col-sm-offset-4 col-lg-8 col-lg-offset-3" style="padding-top: 20px">
+   <div class="panel panel-default">
+  <div class="panel-heading">Create Trouble Ticket</div>
+  <div class="panel-body">
+<form [formGroup]="userForm" (submit)="submitForm(userForm)" class="form-horizontal">
       <div class="form-group row" [ngClass]="{'has-error': (!userForm.controls.name.valid && userForm.controls.name.touched)}">
         <label for="name" class="col-sm-2 control-label">Name</label>
 
@@ -66,18 +64,18 @@
     
       </div>
     </form>
-                </div>
+  </div>
 </div>
+ </div> 
+
 </div>
 <div *ngIf="top">
 <side-bar-top></side-bar-top>
-<div class="col-lg-8">
- <div _ngcontent-dkq-18="" class="panel-heading">
-                    <h3 _ngcontent-dkq-18="">Create Trouble Ticket</h3>
-                </div>
-                <div _ngcontent-dkq-18="" class="panel-body">
-          
-    <form [formGroup]="userForm" (submit)="submitForm(userForm)" class="form-horizontal">
+<div class="col-lg-8 col-lg-offset-2" style="padding-top: 20px">
+  <div class="panel panel-default">
+  <div class="panel-heading">Create Trouble Ticket</div>
+  <div class="panel-body">
+<form [formGroup]="userForm" (submit)="submitForm(userForm)" class="form-horizontal">
       <div class="form-group row" [ngClass]="{'has-error': (!userForm.controls.name.valid && userForm.controls.name.touched)}">
         <label for="name" class="col-sm-2 control-label">Name</label>
 
@@ -137,6 +135,8 @@
     
       </div>
     </form>
-                </div>
+  </div>
 </div>
+</div>
+
 </div>
