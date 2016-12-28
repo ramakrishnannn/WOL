@@ -47,6 +47,9 @@ export class ViewticketComponent implements OnInit {
         return a.name.length;
     }
 
-
+       gotoHome() {
+       window.location.href = '/home';
+  
+}
 
 }

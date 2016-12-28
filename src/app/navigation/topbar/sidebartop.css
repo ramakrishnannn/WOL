@@ -567,3 +567,12 @@ border-color: #4cae4c !important;
 .navbar-nav > li >a:hover{
   border-top: 1px solid orange;
 }
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus{
+  background-color: orange;
+}
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+    background-color: orange;
+    color: #262626;
+    text-decoration: none;
+}

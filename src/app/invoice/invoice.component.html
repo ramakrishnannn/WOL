@@ -1,9 +1,16 @@
-<div *ngIf="!top" class="container-fluid" style="padding: 0px !important">
+<div *ngIf="!top" class="container-fluid" style="padding: 0px !important;">
   <side-bar></side-bar>
-  <div class="col-xs-10 col-xs-offset-1 col-sm-7 col-sm-offset-4"  style="padding: 20px !important">
+   <div class="pagenation col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2" style="padding: 0; background-color: #F2F2F2">
+    <ol class="breadcrumb page-breadcrumb" style="margin:0px">
+      <li (click)="gotoHome()"><a><i class="fa fa-home fa-lg" aria-hidden="true"></i> &nbsp; Home</a></li>
+      <li><a >Invoice Details</a></li>
+    </ol>
+  </div>
+  <div class="col-xs-10 col-xs-offset-1 col-sm-7 col-sm-offset-4 col-lg-8 col-lg-offset-3"  style="padding: 20px !important;">
 
   <div class="panel panel-default">
-  <div class="panel-heading" style="border-radius: 0px;"><b>View Invoice</b></div>
+  <div class="panel-heading" style="border-radius: 0px;  background: rgba(0, 0, 0, 0) linear-gradient(to bottom, #fff 50%, #ebebeb 100%) repeat scroll 0 0;
+    color: #000000;"><b>View Invoice</b></div>
   <div class="panel-body table-responsive">
         <div  style="text-align: right !important;">
                 
@@ -43,24 +50,33 @@
                 <tfoot>
                 <tr>
                     <td colspan="5">
-                        <mfBootstrapPaginator [rowsOnPageSet]=""></mfBootstrapPaginator>
-                        <span style="display: flex;justify-content: center">
-          <button type="button" class="btn btn-success" data-toggle="modal" data-target=".bs-example-modal-lg" routerLink="/billing" routerLinkActive="active1">View Usage Details</button>
-          </span>
+                <mfBootstrapPaginator class="pull-right" [rowsOnPageSet]=""></mfBootstrapPaginator>
+
+                        
                     </td>
                 </tr>
                 </tfoot>
             </table>
+            <div><span style="display: flex;justify-content: center">
+          <button type="button" class="btn btn-success" data-toggle="modal" data-target=".bs-example-modal-lg" routerLink="/billing" routerLinkActive="active1">View Usage Details</button>
+          </span></div>
   </div>
 </div>
 </div>
 </div>
 <div *ngIf="top">
 <side-bar-top></side-bar-top>
+ <div class="pagenation  col-lg-12" style="padding: 0; background-color: #F2F2F2">
+    <ol class="breadcrumb page-breadcrumb" style="margin:0px">
+      <li (click)="gotoHome()"><a><i class="fa fa-home fa-lg" aria-hidden="true"></i> &nbsp; Home</a></li>
+      <li><a>Create Ticket</a></li>
+    </ol>
+  </div>
  <div class="col-xs-10 col-xs-offset-1"  style="padding: 20px !important">
 
   <div class="panel panel-default">
-  <div class="panel-heading" style="border-radius: 0px;">View Invoice</div>
+  <div class="panel-heading" style="border-radius: 0px; background-color: #5cb85c;
+    border-color: #4cae4c;color: #ffffff">View Invoice</div>
   <div class="panel-body table-responsive">
         <div  style="text-align: right !important;">
                 
@@ -100,14 +116,15 @@
                 <tfoot>
                 <tr>
                     <td colspan="5">
-                        <mfBootstrapPaginator [rowsOnPageSet]=""></mfBootstrapPaginator>
-                        <span style="display: flex;justify-content: center">
-          <button type="button" class="btn btn-success" data-toggle="modal" data-target=".bs-example-modal-lg" routerLink="/billing" routerLinkActive="active1">View Usage Details</button>
-          </span>
+                        <mfBootstrapPaginator class="pull-right" [rowsOnPageSet]=""></mfBootstrapPaginator>
+                       
                     </td>
                 </tr>
                 </tfoot>
             </table>
+            <div> <span style="display: flex;justify-content: center">
+          <button type="button" class="btn btn-success" data-toggle="modal" data-target=".bs-example-modal-lg" routerLink="/billing" routerLinkActive="active1">View Usage Details</button>
+          </span></div>
   </div>
 </div>
 </div>

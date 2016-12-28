@@ -110,4 +110,8 @@ submitForm(myForm) {
     alert(userValue);
 
   }
+           gotoHome() {
+       window.location.href = '/home';
+  
+}
 }

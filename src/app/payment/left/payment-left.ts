@@ -55,4 +55,8 @@ export class PaymentLeftComponent {
         () => console.log(this.invoiceData)
       );
   }
+       gotoHome() {
+       window.location.href = '/home';
+  
+}
 }

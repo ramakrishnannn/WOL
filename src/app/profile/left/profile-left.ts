@@ -9,5 +9,8 @@ import { Component, Input } from '@angular/core';
 })
 
 export class ProfileLeftComponent {
+         gotoHome() {
+       window.location.href = '/home';
   
+}
 }

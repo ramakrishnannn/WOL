@@ -1,7 +1,7 @@
   <div class="pagenation col-xs-12" style="padding: 0px">
       <ol class="breadcrumb page-breadcrumb">
-        <li><a href=""><i class="fa fa-home fa-lg" aria-hidden="true"></i> &nbsp; Home</a></li>
-        <li><a href="">Account Home</a></li>
+        <li><a><i class="fa fa-home fa-lg" aria-hidden="true"></i> &nbsp; Home</a></li>
+        <li><a>Account Home</a></li>
       </ol>
     </div>
     <div class="pagecontentbar" style="margin-top:40px;">
@@ -51,22 +51,26 @@
       </div>
     </div></div>
 <!---------------------------------------------Notifications---------------------------------------------->
-<div class="col-lg-3">
+   <div class="col-lg-3">
       <div class="panel">
-      <div class="panel-heading">
-      <h4>Notifications <span class="pull-right" style="display: inline-block;"><i class="fa fa-bell faa-ring animated"></i></span></h4>
+        <div class="panel-heading greenBackGround">
+          <h4>Notifications
+            <span class="pull-right" style="display: inline-block;">
+              <i class="fa fa-bell faa-ring animated"></i>
+            </span>
+          </h4>
+        </div>
 
-      </div>
-      <div class="panel-body" style="height: 195px;">
-      <ul>
-        <li>Your Bill is Past Due. Pay Now</li>
-        <li>Its an year since you last changed your password.Change Now</li>
-      </ul>
-      </div>
-      <div>
+        <div class="panel-body" style="height: 195px;">
+          <ul class="list-unstyled">
+            <li>Your Bill is Over Due. <a href="http://windstream.com">Pay Now</a></li>
+            <br>
+            <li>It is more than an year since you last changed your password. <a href="http://windstream.com">Click here</a> to change now.</li>
+            <br>
+          </ul>
+        </div>
       </div>
     </div>
-</div>
 <!---------------------------------------------Invoices---------------------------------------------->
 <div class="col-lg-5 col-lg-offset-2">
       <div class="panel">
@@ -108,41 +112,47 @@
 
 <!---------------------------------------------Tickets---------------------------------------------->
 
-<div class="col-lg-3">
+    <div class="col-lg-3">
 
-    <div class="panel">
-    <div class="panel-heading">
-    <h4>Open Tickets</h4>
-    </div>
+      <div class="panel">
+        <div class="panel-heading greenBackGround">
+          <h4>Open Requests
+            <span class="pull-right" style="display: inline-block;">
+              <i class="fa fa-ticket animated"></i>
+            </span>
+          </h4>
+        </div>
 
-    <div class="panel-body">
-    <div class="custinfo table-responsive" onload="getAllTickets();">
-    <table class="table table-striped"   [mfData]="data | dataFilter : filterQuery" #mf="mfDataTable"
-    [mfRowsOnPage]="rowsOnPage" [(mfSortBy)]="sortBy" [(mfSortOrder)]="sortOrder">
-    <thead>
-    <tr>
-    <th><b>Category</b></th>
-    <th><b>Status</b></th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let item of ticketData" >
+        <div class="panel-body">
+          <div class="custinfo table-responsive" onload="getAllTickets();">
+            <table class="table table-striped" [mfData]="data | dataFilter : filterQuery" #mf="mfDataTable"
+                   [mfRowsOnPage]="rowsOnPage" [(mfSortBy)]="sortBy" [(mfSortOrder)]="sortOrder">
+              <thead>
+              <tr>
+                <th><b>Category</b></th>
+                <th><b>Status</b></th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let item of ticketData">
 
-    <td>{{item.name}}</td>
-    <td>
-    <div *ngIf="item.resolved==true">CLOSED</div>
-    <div *ngIf="item.resolved!=true">OPEN</div>
-    </td>
-    </tr>
-    </tbody>
-    </table>
+                <td>{{item.name}}</td>
+                <td>
+              <div *ngIf="item.resolved==true">CLOSED</div>
+              <div *ngIf="item.resolved!=true">OPEN</div>
+              </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="widget-detail-1" style="text-align: center;">
+            <a href="/viewticket">
+              <button class="btn btn-success greenBackGround">View All Tickets</button>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="widget-detail-1" style="text-align: center;">
-    <a href="/viewticket"><button class="btn btn-success">View All Tickets</button></a>
-    </div>
-    </div>
-    </div>
-</div>
 
 <!---------------------------------------------carousel---------------------------------------------->
 <div class="col-lg-5 col-lg-offset-2">

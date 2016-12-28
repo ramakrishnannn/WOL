@@ -25,4 +25,8 @@ this._cookieService.put('menu','top');
    		window.location.href = '/billing';
   
 }
+     gotoHome() {
+       window.location.href = '/home';
+  
+}
 }

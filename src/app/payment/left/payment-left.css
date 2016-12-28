@@ -74,9 +74,8 @@
 
     .wizard .nav-tabs {
         position: relative;
-        margin: 40px auto;
-        margin-bottom: 0;
-        border-bottom-color: #e0e0e0;
+        margin: -21px auto -21px;
+        border-bottom-color: #ffffff;
     }
 
     .wizard > div.wizard-inner {
@@ -213,15 +212,32 @@ span.round-tab:hover {
 }
 @media( min-width : 768px ) {
     .connecting-line{
-        left:110px;
+        left:115px;
+    }
+    .wizard{
+        width:137% ;
     }
 }
-@media( min-width : 981px ) {
+@media( min-width : 980px ) {
     .connecting-line{
-        left:110px;
+        left: 150px;
+    width: 46%;
     }
 }
 
+@media( min-width : 1280px ) {
+    .connecting-line{
+        left: 137px;
+    width: 46%;
+    }
+}
+
+@media( min-width : 1920px ) {
+    .connecting-line{
+        left: 180px;
+    width: 46%;
+    }
+}
 .panel-heading{
    background: rgba(0, 0, 0, 0) linear-gradient(to bottom, #fff 50%, #ebebeb 100%) repeat scroll 0 0;
     color: #000000;

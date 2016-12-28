@@ -29,4 +29,9 @@ location.reload();
   
 }
 
+     gotoHome() {
+       window.location.href = '/home';
+  
+}
+
 }

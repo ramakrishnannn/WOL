@@ -47,5 +47,8 @@ top: boolean = false;
         return new Date(a.month+'-1-'+a.year).getMonth()+1;
     }
 
-
+         gotoHome() {
+       window.location.href = '/home';
+  
+}
 }
