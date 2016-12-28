@@ -57,7 +57,7 @@ submitForm(myForm) {
 
 
   addTickets(formData){
-    this.http.post('http://localhost:8080/tickets/create',formData)
+    this.http.post('http://192.168.26.15:8080/tickets/create',formData)
         .map(res => res.json())
         .subscribe(
           (data) => {

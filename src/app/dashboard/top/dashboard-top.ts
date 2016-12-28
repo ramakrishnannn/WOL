@@ -29,7 +29,7 @@ this.getInvoiceDueAmount();
 }
 
   getAllTickets() {
-    this.http.get('http://localhost:8080/tickets/lasttwo')
+    this.http.get('http://192.168.26.15:8080/tickets/lasttwo')
       .subscribe(
         data => { this.ticketData = data.json()},
         err => console.error(err),
@@ -39,7 +39,7 @@ this.getInvoiceDueAmount();
 
 
   getInvoiceData() {
-    this.http.get('http://localhost:8080/invoice/last2Month')
+    this.http.get('http://192.168.26.15:8080/invoice/last2Month')
       .subscribe(
         data => { this.invoiceData = data.json()},
         err => console.error(err),
@@ -48,7 +48,7 @@ this.getInvoiceDueAmount();
   }
 
   getInvoiceDueAmount(){
-    this.http.get('http://localhost:8080/invoice/currectinvoice')
+    this.http.get('http://192.168.26.15:8080/invoice/currectinvoice')
       .subscribe(
         data => { this.invoiceDueData = data.json()},
         err => console.error(err),

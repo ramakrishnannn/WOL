@@ -215,11 +215,11 @@ ul li a {
     padding-left: 10px;
     padding-right: 10px;
 }
-
+/*
 .panel:not(.myCarouselPanel){
     box-shadow: 4px 6px 28px -4px rgba(187,209,174,1);
 }
-
+*/
 /*Less than 768*/
 @media all and (max-width: 768px) {
     body{
@@ -234,4 +234,11 @@ ul li a {
 
 .error{
 	color: darkred !important;
+}
+
+.panel-heading{
+   background: rgba(0, 0, 0, 0) linear-gradient(to bottom, #fff 50%, #ebebeb 100%) repeat scroll 0 0;
+    color: #000000;
+
+
 }

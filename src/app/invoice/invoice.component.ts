@@ -18,7 +18,7 @@ export class InvoiceComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.http.get("http://localhost:8080/invoice/all")
+        this.http.get("http://192.168.26.15:8080/invoice/all")
             .subscribe((data)=> {
                 setTimeout(()=> {
                     this.data = data.json();

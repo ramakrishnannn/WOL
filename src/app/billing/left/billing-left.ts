@@ -18,7 +18,7 @@ constructor(private http: Http) {
 
 
 getCurrentMonthBilling(){
-this.http.get('http://localhost:8080/invoice/currectinvoice')
+this.http.get('http://192.168.26.15:8080/invoice/currectinvoice')
       .subscribe(
         data => { this.invoiceData = data.json()
           this.model.monthvalue=this.invoiceData[0].month+"-"+this.invoiceData[0].year;
@@ -41,7 +41,7 @@ this.http.get('http://localhost:8080/invoice/currectinvoice')
       };
       let jsonString = JSON.stringify(obj);
 
-      this.http.post('http://localhost:8080/invoice/billingdetails', jsonString)
+      this.http.post('http://192.168.26.15:8080/invoice/billingdetails', jsonString)
         .subscribe(
           data => {
             this.invoiceData = data.json()
