@@ -14,7 +14,9 @@ export class SideBarTopComponent {
 isClassVisible: false;
 issubmenu:false;
  top: boolean = false;
-
+ngOnInit() {
+this.gotoHome();
+}
   constructor(private router: Router,private _cookieService:CookieService) {
 
   }
@@ -30,7 +32,10 @@ location.reload();
 }
 
      gotoHome() {
-       window.location.href = '/home';
+   
+$('.carousel').carousel({
+  interval: 2000
+})
   
 }
 

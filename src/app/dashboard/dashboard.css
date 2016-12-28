@@ -301,3 +301,32 @@ ul li a {
 .heading-bar {
     margin-bottom:0
 }
+
+
+
+
+
+
+
+
+
+
+.box-anim1 {
+        animation: box-anim1 1.2s ease-out;
+        -moz-animation: box-anim1 1.2s ease-out;
+        -webkit-animation: box-anim1 1.2s ease-out;
+    }
+
+    @keyframes box-anim1 {
+        from { bottom: 2000px; opacity: 0; visibility: hidden;}
+        to {bottom: 10px; opacity: 1; visibility: visible;}
+    }
+    @-moz-keyframes box-anim1 {
+        from {bottom: 2000px; opacity: 0; visibility: hidden;}
+        to {bottom: 78px; opacity: 1; visibility: visible;}
+    }
+    @-webkit-keyframes box-anim1 {
+        from {bottom: 2000px; opacity: 0; visibility: hidden;}
+        to {bottom: 78px; opacity: 1; visibility: visible;}
+    }
+    

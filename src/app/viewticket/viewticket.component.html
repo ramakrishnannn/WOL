@@ -1,7 +1,7 @@
 <div *ngIf="!top" class="container-fluid" style="padding: 0px !important">
  <div class="pagenation  col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2" style="padding: 0; background-color: #F2F2F2">
     <ol class="breadcrumb page-breadcrumb" style="margin:0px">
-      <li (click)="gotoHome()"><a><i class="fa fa-home fa-lg" aria-hidden="true"></i> &nbsp; Home</a></li>
+      <li routerLink="/home"><a><i class="fa fa-home fa-lg" aria-hidden="true"></i> &nbsp; Home</a></li>
       <li><a>View Ticket</a></li>
     </ol>
   </div>
@@ -69,7 +69,7 @@
 <side-bar-top></side-bar-top>
  <div class="pagenation  col-lg-12" style="padding: 0; background-color: #F2F2F2">
     <ol class="breadcrumb page-breadcrumb" style="margin:0px">
-      <li (click)="gotoHome()"><a><i class="fa fa-home fa-lg" aria-hidden="true"></i> &nbsp; Home</a></li>
+      <li routerLink="/home"><a><i class="fa fa-home fa-lg" aria-hidden="true"></i> &nbsp; Home</a></li>
       <li><a>View Ticket</a></li>
     </ol>
   </div>
