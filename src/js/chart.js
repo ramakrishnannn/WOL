@@ -14,7 +14,7 @@ var chart = AmCharts.makeChart("chartdiv", {
     "valueAxes": [{
         "stackType": "3d",
         "unit": "$",
-        "position": "right",
+        "position": "left",
         "title": "Bill Amount",
     }],
     "startDuration": 1,
@@ -23,13 +23,9 @@ var chart = AmCharts.makeChart("chartdiv", {
         "fillAlphas": 0.9,
         "lineAlpha": 0.2,
         "title": "2004",
-        "type": "column",
-        "valueField": "year2004"
-    }, {
-        "balloonText": "Bill Amount in [[category]] : <b>[[value]]</b>",
-        "fillAlphas": 0.9,
-        "lineAlpha": 0.2,
-        "title": "2005",
+        "balloonColor" : "rgb(103, 183, 220)",
+        "bulletBorderColor" : "rgb(103, 183, 220)",
+        "fillColors":"rgb(103, 183, 220)",
         "type": "column",
         "valueField": "currentCharge"
     }],

@@ -5,9 +5,9 @@
     <div class="input-group date pull-right" id='date' style="cursor: pointer;">
 
        <input type="text" class="form-control" name="monthvalue" id='dtp' [(ngModel)]="model.monthvalue" #monthvalue="ngModel"  (ngModelChange)="model.monthvalue = $event.target.value"  ng-reflect-model="$event.target.value" (focus)="getBillingDetails($event.target.value)"
-   (onblur)="getBillingDetails($event.target.value)"/>
-      <span class="input-group-addon" style="display:none">
-      <!-- <span class="fa fa-calendar"></span> -->
+   (onblur)="getBillingDetails($event.target.value)" readonly/>
+      <span class="input-group-addon" style="display:none1" >
+       <span class="fa fa-calendar" id='caldt'></span>
    </span>
     </div>
 </div>
@@ -18,7 +18,7 @@
         <div class="panel-heading">
           <h4 class="panel-title">Account Details</h4>
         </div>
-        <div class="table-responsive">
+        <div class="table-responsive" style="padding: 10px;">
 <table class="table">
   <tr>
     <td>Bill Date : <span *ngFor="let b of invoiceData">{{b.month}}-{{b.year}}</span></td>
@@ -63,7 +63,7 @@
         <div class="panel-heading">
           <h4 class="panel-title">Bill Alerts</h4>
         </div>
-        <div class="panel-body panelbody">
+        <div class="panel-body panelbody" style="padding: 32px !important;margin: 1px;line-height: 32px;">
           <div class="list-group">
             <ol>
               <li><p class="list-group-item-text">As a loyal customer you are receiving 30% Discount on bill.</p></li>
