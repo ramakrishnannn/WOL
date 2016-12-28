@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {Http} from "@angular/http";
-
-import { routerTransition } from './router.animations';
 @Component({
     selector: 'dashboard-left',
     templateUrl: 'dashboard-left.html',

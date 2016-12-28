@@ -28,7 +28,6 @@ this._cookieService.put('menu','top');
   
 }
      gotoHome() {
-   
 $('.carousel').carousel({
   interval: 2000
 })
